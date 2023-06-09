@@ -26,12 +26,6 @@ function Header({restBase}) {
         setNavOpen(!navOpen);
     }
 
-    function checkDesktop(e) {
-        if(e.matches) {
-          setNavOpen(false);
-        }
-    }
-
     function closeNavMenu(e){
         if(window.innerWidth < 800) {
           showHideNav();
@@ -39,13 +33,6 @@ function Header({restBase}) {
           e.target.blur();
         }
     }
-    
-    useEffect(() => {
-    let mediaQuery = window.matchMedia('(min-width: 800px)');
-    mediaQuery.addEventListener('change', checkDesktop);
-    return () => mediaQuery.removeEventListener('change', checkDesktop);
-    })
-
 
     return (
         <>

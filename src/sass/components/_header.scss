@@ -4,7 +4,6 @@
     align-items: center;
     flex-wrap: wrap;
     padding: 1rem;
-    background-color: #fff;
 }
 
 .logo img {
@@ -12,16 +11,27 @@
 }
 
 .menu-btn {
-    position: relative;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
     z-index: 100;
+    background-color: $primary-color;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 4px 4px 12px #bababa;
 }
 
 .plusIcon {
+    margin-top: 2px;
     .line {
         display: block;
         width: 40px;
-        height: 3px;
-        background-color: $dark-gray;
+        height: 4px;
+        background-color: #fff;
         transition: .35s;
     }
 
@@ -53,8 +63,9 @@
     font-size: 2rem;
     font-weight: 400;
     ul {
-        margin-top: 10rem;
-        padding-left: 8rem;
+        position: relative;
+        top: 10rem;
+        left: 30%;
     }
     li {
         margin-bottom: 5rem;
@@ -62,7 +73,7 @@
     }
     a {
         display: inline-block;
-        width: 100%;
+        width: 80%;
         border-bottom: 2.5px solid $dark-gray;
     }
 }
@@ -70,4 +81,35 @@
 .show .site-navigation {
     transform: translateX(0%);
     transition: transform 0.4s ease-out;
+}
+
+@media (min-width: 50em) {
+    .site-navigation {
+        width: 50%;
+        max-width: 800px;
+    }
+
+    .menu-btn {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        z-index: 100;
+        background-color: transparent;
+        box-shadow: none;
+        margin-top: 5px;
+        transition: width 2.5s ease-in-out;
+        width: 65px;
+        height: 65px;
+        &:hover .line {
+            background-color: $black;
+            width: 55px;
+        }
+    }
+
+    .plusIcon {
+        .line {
+            background-color: $dark-gray;
+            width: 50px;
+        }
+    }
 }

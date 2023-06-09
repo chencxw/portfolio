@@ -12,7 +12,11 @@ ul {
 a {
     text-decoration: none;
     color: $dark-gray;
-    :visited {
+    &:visited {
         color: $dark-gray;
+    }
+    &:hover,
+    &:focus {
+        color: $black;
     }
 }
