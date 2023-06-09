@@ -1,8 +1,78 @@
 import {useState, useEffect} from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import { plusSVG } from '../globals/globals';
 
-function Header() {
-  return (
-    <div>Header</div>
-  )
+function Header({restBase}) {
+    const restPath = restBase + 'pages/6?acf_format=standard'
+    const [restData, setData] = useState([])
+    const [isLoaded, setLoadStatus] = useState(false)
+    const [navOpen, setNavOpen] = useState(false);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await fetch(restPath)
+            if ( response.ok ) {
+                const data = await response.json()
+                setData(data)
+                setLoadStatus(true)
+            } else {
+                setLoadStatus(false)
+            }
+        }
+        fetchData()
+    }, [restPath])
+
+    function showHideNav() {
+        setNavOpen(!navOpen);
+    }
+
+    function checkDesktop(e) {
+        if(e.matches) {
+          setNavOpen(false);
+        }
+    }
+
+    function closeNavMenu(e){
+        if(window.innerWidth < 800) {
+          showHideNav();
+        }else{
+          e.target.blur();
+        }
+    }
+    
+    useEffect(() => {
+    let mediaQuery = window.matchMedia('(min-width: 800px)');
+    mediaQuery.addEventListener('change', checkDesktop);
+    return () => mediaQuery.removeEventListener('change', checkDesktop);
+    })
+
+
+    return (
+        <>
+        {isLoaded && 
+            <header className={ navOpen ? 'site-header show' : 'site-header'}>
+                <Link className="logo">
+                    <img src={`${restData.acf.logo}`} alt="logo" />
+                </Link>
+                <button className="menu-btn" onMouseDown={(e) => {e.preventDefault();}} onClick={showHideNav} >
+                    <span className="plusIcon">
+                        <span className="line"></span>
+                        <span className="line"></span>
+                    </span>
+                    <span className="sr-only">Menu</span>
+                </button>
+                <nav className="site-navigation" >
+                    <ul onClick={closeNavMenu}>
+                        <li><NavLink to="/">Home</NavLink></li>
+                        <li><NavLink to="/">About</NavLink></li>
+                        <li><NavLink to="/">Projects</NavLink></li>
+                        <li><NavLink to="/">Contact</NavLink></li>
+                    </ul>
+                </nav>
+            </header>
+        }
+
+        </>
+    )
 }
 export default Header

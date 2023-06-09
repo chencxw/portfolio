@@ -1,6 +1,9 @@
 // Development Components
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+// Components
+import Header from './components/Header';
+
 // Pages
 import PageHome from './pages/PageHome';
 
@@ -25,6 +28,7 @@ function App() {
 
   return (
     <BrowserRouter>
+    <Header restBase={restBase}/>
         <main>
           <Routes>
             <Route path="/" exact element={<PageHome restBase={restBase} />}/>
