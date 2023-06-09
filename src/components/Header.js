@@ -1,6 +1,5 @@
 import {useState, useEffect} from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { plusSVG } from '../globals/globals';
 
 function Header({restBase}) {
     const restPath = restBase + 'pages/6?acf_format=standard'
