@@ -1,0 +1,115 @@
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+.logo img {
+    width: 70px;
+}
+
+.menu-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 100;
+    background-color: $primary-color;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 4px 4px 12px #bababa;
+}
+
+.plusIcon {
+    margin-top: 2px;
+    .line {
+        display: block;
+        width: 40px;
+        height: 4px;
+        background-color: #fff;
+        transition: .35s;
+    }
+
+    span:nth-child(2) {
+        transform: translateY(-100%) rotate(90deg);
+    }
+}
+
+.show .plusIcon {
+    span:nth-child(1) {
+        opacity: 0;
+        transform: rotate(-90deg);
+    }
+    span:nth-child(2) {
+        transform: translateY(-100%) rotate(0deg);
+    }
+}
+
+.site-navigation {
+    background-color: $beige;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    transition: transform 0.4s ease-out;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 400;
+    ul {
+        position: relative;
+        top: 10rem;
+        left: 30%;
+    }
+    li {
+        margin-bottom: 5rem;
+
+    }
+    a {
+        display: inline-block;
+        width: 80%;
+        border-bottom: 2.5px solid $dark-gray;
+    }
+}
+
+.show .site-navigation {
+    transform: translateX(0%);
+    transition: transform 0.4s ease-out;
+}
+
+@media (min-width: 50em) {
+    .site-navigation {
+        width: 50%;
+        max-width: 800px;
+    }
+
+    .menu-btn {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        z-index: 100;
+        background-color: transparent;
+        box-shadow: none;
+        margin-top: 5px;
+        transition: width 2.5s ease-in-out;
+        width: 65px;
+        height: 65px;
+        &:hover .line {
+            background-color: $black;
+            width: 55px;
+        }
+    }
+
+    .plusIcon {
+        .line {
+            background-color: $dark-gray;
+            width: 50px;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    height: fit-content;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: $dark-gray;
+    &:visited {
+        color: $dark-gray;
+    }
+    &:hover,
+    &:focus {
+        color: $black;
+    }
+}
