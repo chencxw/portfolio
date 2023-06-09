@@ -1,10 +1,13 @@
 import {useState, useEffect} from 'react';
+import Loading from '../components/Loading';
 
 function PageHome({restBase}) {
-    const restPath = restBase + 'pages/6'
-    const [restData, setData] = useState([])
-    const [isLoaded, setLoadStatus] = useState(false)
+    const restPath = restBase + 'pages/6';
+    const [restData, setData] = useState([]);
+    const [isLoaded, setLoadStatus] = useState(false);
+    const [matches, setMatches] = useState(false);
 
+    // API call
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch(restPath)
@@ -19,16 +22,21 @@ function PageHome({restBase}) {
         fetchData()
     }, [restPath])
 
-    return (
-        <div>
-            {/* {isLoaded && 
-                <article>
-                    <div dangerouslySetInnerHTML={{__html:restData.acf.role_list}}>
-                    </div>
-                </article>
-            } */}
+    // Media query
+    function checkDesktop(e) {
+        setMatches(e.matches)
+    }
 
-        </div>
+    useEffect(() => {
+        let mediaQuery = window.matchMedia('(min-width: 800px)');
+        mediaQuery.addEventListener('change', checkDesktop);
+        return () => mediaQuery.removeEventListener('change', checkDesktop);
+      })
+
+    return (
+        <>
+            <Loading />
+        </>
     )
 }
 export default PageHome
