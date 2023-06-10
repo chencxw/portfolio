@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react';
 import Loading from '../components/Loading';
 
 function PageHome({restBase, handleDisplayLoading}) {
-    const restPath = restBase + 'pages/6';
+    const restPath = restBase + 'pages/6?acf_format=standard';
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
     const [matches, setMatches] = useState(false);
@@ -22,7 +22,7 @@ function PageHome({restBase, handleDisplayLoading}) {
                 }
             }
             fetchData()
-        }, 1500)
+        }, 1300)
 
     }, [restPath])
 
@@ -55,6 +55,9 @@ function PageHome({restBase, handleDisplayLoading}) {
                         <span class="letter">E</span>
                         <span class="letter">N</span>
                         <span class="letter">.</span>
+                    </div>
+                    <div className="job-title" >
+                        <h2 dangerouslySetInnerHTML={{__html:restData.acf.job_title}}></h2>
                     </div>
                 </section>
             :

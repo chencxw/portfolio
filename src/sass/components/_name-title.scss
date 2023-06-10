@@ -1,7 +1,7 @@
 // Shuffle animation from https://codepen.io/palmdesign/pen/bGpVKxy
 .letters {
     position: relative;
-    top: 20%;
+    // margin-top: 10rem;
     span:nth-child(8) {
         display: inline;
     }
@@ -9,14 +9,24 @@
 
 .letter {
     display: inline-block;
-    width: 2.5rem;
     position: relative;
     overflow: hidden;
     margin: 0rem 0rem;
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     color: $primary-color;
-    font-weight: 500;
+    font-family: Avenir;
+    font-weight: 700;
     text-align: left;
+    z-index: 10;
+}
+
+@media(min-width: 50em) {
+    .letters {
+        span:nth-child(8) {
+            display: inline-block;
+            width: 1.5rem
+        }
+    }
 }
 
 .letter:before {
@@ -81,15 +91,15 @@
 
 .letter:nth-child(4):before {
     content: "RSTUVWXYZ";
-    margin-top: -450px;
+    margin-top: -477px;
     animation-name: letter4;
-    animation-duration: 0.105s;
+    animation-duration: 0.205s;
     animation-delay: 0.97s;
     animation-fill-mode: forwards;
 }
 @keyframes letter4 {
     from {
-        margin-top: -450px;
+        margin-top: -477px;
    }
     to {
         margin-top: 70px;
