@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import Loading from '../components/Loading';
 
-function PageHome({restBase}) {
+function PageHome({restBase, handleDisplayLoading}) {
     const restPath = restBase + 'pages/6';
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
@@ -9,17 +9,21 @@ function PageHome({restBase}) {
 
     // API call
     useEffect(() => {
-        const fetchData = async () => {
-            const response = await fetch(restPath)
-            if ( response.ok ) {
-                const data = await response.json()
-                setData(data)
-                setLoadStatus(true)
-            } else {
-                setLoadStatus(false)
+        handleDisplayLoading();
+        setTimeout(() => {
+            const fetchData = async () => {
+                const response = await fetch(restPath)
+                if ( response.ok ) {
+                    const data = await response.json()
+                    setData(data)
+                    setLoadStatus(true)
+                } else {
+                    setLoadStatus(false)
+                }
             }
-        }
-        fetchData()
+            fetchData()
+        }, 1500)
+
     }, [restPath])
 
     // Media query
@@ -35,7 +39,7 @@ function PageHome({restBase}) {
 
     return (
         <>
-            {isLoaded ? 
+            {isLoaded ?
                 <section className='landing-section'>
                      <div class="letters">
                         <span class="letter">C</span>
@@ -53,14 +57,9 @@ function PageHome({restBase}) {
                         <span class="letter">.</span>
                     </div>
                 </section>
-                // <article>
-                //     <div dangerouslySetInnerHTML={{__html:restData.acf.role_list}}>
-                //     </div>
-                // </article>
-            :   
+            :
                 <Loading />
             }
-
         </>
     )
 }

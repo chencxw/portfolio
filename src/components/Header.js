@@ -1,7 +1,8 @@
 import {useState, useEffect} from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import logo from '../images/logo.gif';
 
-function Header({restBase}) {
+function Header({restBase, displayLoading}) {
     const restPath = restBase + 'pages/6?acf_format=standard'
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
@@ -38,7 +39,7 @@ function Header({restBase}) {
         {isLoaded && 
             <header className={ navOpen ? 'site-header show' : 'site-header'}>
                 <Link className="logo">
-                    <img src={`${restData.acf.logo}`} alt="logo" />
+                    {displayLoading ? <img src={logo} alt="Loading Logo" /> : <img src={`${restData.acf.logo}`} alt="logo" />}
                 </Link>
                 <button className="menu-btn" onMouseDown={(e) => {e.preventDefault();}} onClick={showHideNav} >
                     <span className="plusIcon">
