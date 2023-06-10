@@ -28,12 +28,14 @@ function App() {
 
   return (
     <BrowserRouter>
-    <Header restBase={restBase}/>
+      <div className='site'>
+        <Header restBase={restBase}/>
         <main>
           <Routes>
             <Route path="/" exact element={<PageHome restBase={restBase} />}/>
           </Routes>
         </main>
+      </div>
     </BrowserRouter>
   );
 }

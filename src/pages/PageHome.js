@@ -35,7 +35,32 @@ function PageHome({restBase}) {
 
     return (
         <>
-            <Loading />
+            {isLoaded ? 
+                <section className='landing-section'>
+                     <div class="letters">
+                        <span class="letter">C</span>
+                        <span class="letter">R</span>
+                        <span class="letter">Y</span>
+                        <span class="letter">S</span>
+                        <span class="letter">T</span>
+                        <span class="letter">A</span>
+                        <span class="letter">L</span>
+                        <span class="letter">{matches ? "" : <br></br> }</span>
+                        <span class="letter">C</span>
+                        <span class="letter">H</span>
+                        <span class="letter">E</span>
+                        <span class="letter">N</span>
+                        <span class="letter">.</span>
+                    </div>
+                </section>
+                // <article>
+                //     <div dangerouslySetInnerHTML={{__html:restData.acf.role_list}}>
+                //     </div>
+                // </article>
+            :   
+                <Loading />
+            }
+
         </>
     )
 }
