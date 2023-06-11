@@ -4,11 +4,23 @@
 }
 
 .job-title {
-    border-bottom: 3px solid $dark-gray;
+    border-bottom: 3px solid $light-gray;
     width: fit-content;
     margin-top: 15vh;
     h2 {
-        font-weight: 500;
+        font-weight: 400;
         font-size: 1.6rem;
+    }
+}
+
+@media( min-width: 31.25em) {
+    .landing-section {
+        padding: 10rem 10vw;
+    }
+}
+
+@media( min-width:62.5em ) {
+    .job-title h2 {
+        font-size: clamp(25.6px, 2vw, 45px);
     }
 }

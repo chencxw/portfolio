@@ -12,10 +12,10 @@
     position: relative;
     overflow: hidden;
     margin: 0rem 0rem;
-    font-size: 3.2rem;
+    font-size: clamp(51.2px, 15vw, 64px);
     color: $primary-color;
-    font-family: Avenir;
-    font-weight: 700;
+    font-family: 'Avenir';
+    font-weight: 500;
     text-align: left;
     z-index: 10;
 }
@@ -27,6 +27,14 @@
             width: 1.5rem
         }
     }
+    
+}
+
+@media(min-width: 62.5em) {
+    .letter {
+        font-size: clamp(64px, 8vw, 150px);
+    }
+    
 }
 
 .letter:before {
@@ -51,7 +59,7 @@
         margin-top: -63px;
    }
     to {
-        margin-top: 63px;
+        margin-top: 150%;
    }
 }
 
@@ -59,7 +67,7 @@
     content: "NOPQRSTUVW";
     margin-top: -135px;
     animation-name: letter2;
-    animation-duration: 2.944s;
+    animation-duration: 2s;
     animation-delay: 0.08s;
     animation-fill-mode: forwards;
 }
@@ -68,7 +76,7 @@
         margin-top: -135px;
    }
     to {
-        margin-top: 70px;
+        margin-top: 170%;
    }
 }
 
@@ -85,7 +93,7 @@
         margin-top: -448px;
    }
     to {
-        margin-top: 70px;
+        margin-top: 180%;
    }
 }
 
@@ -102,7 +110,7 @@
         margin-top: -477px;
    }
     to {
-        margin-top: 70px;
+        margin-top: 190%;
    }
 }
 
@@ -119,7 +127,7 @@
         margin-top: -258px;
    }
     to {
-        margin-top: 70px;
+        margin-top: 190%;
    }
 }
 
@@ -127,7 +135,7 @@
     content: "MNOPQRSTUV";
     margin-top: -168px;
     animation-name: letter6;
-    animation-duration: 0.63s;
+    animation-duration: 0.53s;
     animation-delay: 0.82s;
     animation-fill-mode: forwards;
 }
@@ -136,7 +144,7 @@
         margin-top: -168px;
    }
     to {
-        margin-top: 70px;
+        margin-top: 150%;
    }
 }
 
@@ -144,7 +152,7 @@
     content: "ABCDEFGHIJ";
     margin-top: -192px;
     animation-name: letter7;
-    animation-duration: 3.2s;
+    animation-duration: 2.5s;
     animation-delay: 0.1s;
     animation-fill-mode: forwards;
 }
@@ -153,7 +161,7 @@
         margin-top: -192px;
    }
     to {
-        margin-top: 70px;
+        margin-top: 200%;
    }
 }
 
@@ -161,7 +169,7 @@
     content: "RSTUVWXYZ";
     margin-top: -258px;
     animation-name: letter9;
-    animation-duration: 2.345s;
+    animation-duration: 2.1s;
     animation-delay: 0.33s;
     animation-fill-mode: forwards;
 }
@@ -170,7 +178,7 @@
         margin-top: -258px;
    }
     to {
-        margin-top: 70px;
+        margin-top: 150%;
    }
 }
 
@@ -187,7 +195,7 @@
         margin-top: -258px;
    }
     to {
-        margin-top: 70px;
+        margin-top: 150%;
    }
 }
 
@@ -204,7 +212,7 @@
         margin-top: -388px;
    }
     to {
-        margin-top: 70px;
+        margin-top: 180%;
    }
 }
 
@@ -221,7 +229,7 @@
         margin-top: -258px;
    }
     to {
-        margin-top: 70px;
+        margin-top: 150%;
    }
 }
 
@@ -238,6 +246,6 @@
         margin-top: -198px;
    }
     to {
-        margin-top: 70px;
+        margin-top: 380%;
    }
 }
