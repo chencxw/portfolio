@@ -1,25 +1,61 @@
 .landing-section {
-    height: 85vh;
+    min-height: 90vh;
     padding-top: 10rem;
+    margin-bottom: 4rem;
 }
 
 .job-title {
-    border-bottom: 3px solid $light-gray;
+    // border-bottom: 3px solid $light-gray;
     width: fit-content;
     margin-top: 15vh;
+
+    &::after {
+        content: '';
+        display: block;
+        width: 0px;
+        height: 3px;
+        background-color: $light-gray;
+        animation-name: job-title-border;
+        animation-duration: 2s;
+        animation-delay: 2s;
+        animation-fill-mode: forwards;
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
+
     h2 {
         font-weight: 400;
         font-size: 1.6rem;
     }
 }
+@keyframes job-title-border {
+    from {
+       width: 0px;
+   }
+    to {
+        width: 100%;
+   }
+}
 
 @media( min-width: 31.25em) {
     .landing-section {
-        padding: 10rem 10vw;
+        padding: 10rem 10vw 0rem;
+    }
+}
+
+@media( min-width: 50em) {
+    .job-title{
+        margin-top: 23vh;
     }
 }
 
 @media( min-width:62.5em ) {
+    .landing-section {
+        padding-top: 7rem;
+    }
+
     .job-title h2 {
         font-size: clamp(25.6px, 2vw, 45px);
     }
