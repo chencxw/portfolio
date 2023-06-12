@@ -1,9 +1,9 @@
-import {useState, useEffect} from 'react';
+// import {useState, useEffect} from 'react';
 
 function About({restBase, restData}) {
 
   return (
-    <section className='about-section' id='about-section'>
+    <section className='about-section' id='about'>
         <h2>About.</h2>
         <div dangerouslySetInnerHTML={{__html:restData.acf.about_content}} className='about-content'></div>
         <section className='toolkit-section'>

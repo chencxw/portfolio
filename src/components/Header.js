@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import {HashLink} from 'react-router-hash-link';
 import logoGIF from '../images/logo.gif';
 
 function Header({restBase, displayLoading}) {
@@ -51,7 +52,7 @@ function Header({restBase, displayLoading}) {
                 <nav className="site-navigation" >
                     <ul onClick={closeNavMenu}>
                         <li><NavLink to="/">Home</NavLink></li>
-                        <li><NavLink to="/">About</NavLink></li>
+                        <li><HashLink smooth to="/#about">About</HashLink></li>
                         <li><NavLink to="/">Projects</NavLink></li>
                         <li><NavLink to="/">Contact</NavLink></li>
                     </ul>

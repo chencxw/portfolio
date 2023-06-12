@@ -105,6 +105,15 @@
 }
 
 @media (min-width: 50em) {
+    .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 1.5rem;
+        z-index: 100;
+    }
+
     .site-navigation {
         width: 50%;
         max-width: 800px;
