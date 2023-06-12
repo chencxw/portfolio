@@ -3,7 +3,7 @@ import Loading from '../components/Loading';
 import About from '../components/About';
 
 function PageHome({restBase, handleDisplayLoading}) {
-    const restPath = restBase + 'pages/6?acf_format=standard';
+    const restPath = restBase + 'pages/6?acf_format=standard&test=test';
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
     const [matches, setMatches] = useState(false);

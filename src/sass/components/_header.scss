@@ -77,14 +77,16 @@
         left: 15%;
     }
     li {
-        margin-bottom: 5rem;
+        margin-bottom: 10vh;
 
     }
     a {
         display: inline-block;
         width: 100%;
         border-bottom: 2.5px solid $dark-gray;
-        &:hover {
+        &:hover,
+        &:focus,
+        &:active {
             border-bottom: 2.5px solid $black;
             transform: translateX(-1.5rem);
         }

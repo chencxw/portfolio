@@ -2,22 +2,8 @@
     padding: 1.5rem;
 }
 
-// @media(min-width: 50em) {
-//     .site {
-// 		max-width: 2200px;
-// 		display: grid;
-//         grid-template-columns: 1fr minmax(0, 1000px) 1fr;
-// 		grid-template-areas:
-// 			"header header header"
-// 			". main ."
-// 			"footer footer footer";
-//     }
-// }
-
-// .site-header {
-//     grid-area: header;
-// }
-
-// main {
-//     grid-area: main;
-// }
+@media( min-width: 31.25em) {
+    main {
+        padding:  0rem 10vw;
+    }
+}
