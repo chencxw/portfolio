@@ -1,3 +1,4 @@
+// Landing Section
 .landing-section {
     min-height: 90vh;
     padding-top: 10rem;
@@ -5,9 +6,12 @@
 }
 
 .job-title {
-    // border-bottom: 3px solid $light-gray;
     width: fit-content;
     margin-top: 15vh;
+
+    h2 {
+        color: $dark-gray;
+    }
 
     &::after {
         content: '';
@@ -16,7 +20,7 @@
         height: 3px;
         background-color: $light-gray;
         animation-name: job-title-border;
-        animation-duration: 2s;
+        animation-duration: 1.5s;
         animation-delay: 2s;
         animation-fill-mode: forwards;
     }
@@ -58,5 +62,16 @@
 
     .job-title h2 {
         font-size: clamp(25.6px, 2vw, 45px);
+    }
+}
+
+// About section
+.about-section {
+    min-height: 100vh;
+}
+.toolkit-section {
+    margin-top: 4rem;
+    p {
+        margin-top: 0.3rem;
     }
 }

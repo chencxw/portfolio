@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import Loading from '../components/Loading';
+import About from '../components/About';
 
 function PageHome({restBase, handleDisplayLoading}) {
     const restPath = restBase + 'pages/6?acf_format=standard';
@@ -40,7 +41,8 @@ function PageHome({restBase, handleDisplayLoading}) {
     return (
         <>
             {isLoaded ?
-                <section className='landing-section'>
+                <>
+                <section className='landing-section' id="landing-section">
                      <div class="letters">
                         <span class="letter">C</span>
                         <span class="letter">R</span>
@@ -60,6 +62,8 @@ function PageHome({restBase, handleDisplayLoading}) {
                         <h2 dangerouslySetInnerHTML={{__html:restData.acf.job_title}}></h2>
                     </div>
                 </section>
+                    <About restBase={restBase} restData={restData}></About>
+                </>
             :
                 <Loading />
             }
