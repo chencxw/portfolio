@@ -130,8 +130,12 @@
     }
 }
 
-.contact-content.show {
+.contact-content {
     display: none;
+}
+
+.contact-content.show {
+    display: block;
 }
 
 .contact-underline {

@@ -37,7 +37,7 @@ function PageHome({restBase, handleDisplayLoading}) {
         let mediaQuery = window.matchMedia('(min-width: 800px)');
         mediaQuery.addEventListener('change', checkDesktop);
         return () => mediaQuery.removeEventListener('change', checkDesktop);
-      })
+    })
 
     return (
         <>
