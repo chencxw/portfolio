@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import Loading from '../components/Loading';
 import About from '../components/About';
+import Contact from '../components/Contact';
 
 function PageHome({restBase, handleDisplayLoading}) {
     const restPath = restBase + 'pages/6?acf_format=standard&test=test';
@@ -62,7 +63,8 @@ function PageHome({restBase, handleDisplayLoading}) {
                         <h2 dangerouslySetInnerHTML={{__html:restData.acf.job_title}}></h2>
                     </div>
                 </section>
-                    <About restBase={restBase} restData={restData}></About>
+                <About restData={restData} />
+                <Contact restData={restData}/>
                 </>
             :
                 <Loading />

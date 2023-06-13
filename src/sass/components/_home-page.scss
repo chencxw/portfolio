@@ -19,8 +19,8 @@
         height: 3px;
         background-color: $light-gray;
         animation-name: job-title-border;
-        animation-duration: 1.5s;
-        animation-delay: 2s;
+        animation-duration: 1s;
+        animation-delay: 1.7s;
         animation-fill-mode: forwards;
     }
 
@@ -46,7 +46,7 @@
     .landing-section {
         margin-top: 98.22px;
     }
-    
+
     .job-title{
         margin-top: 23vh;
     }
@@ -64,7 +64,7 @@
 
 // About section
 .about-section {
-    min-height: 100vh;
+    min-height: 700px;
 }
 
 .about-content {
@@ -115,4 +115,48 @@
         font-size: 1.3rem;
         line-height: 2.5rem;
     }
+}
+
+// Contact section
+.contact-section {
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    h2 {
+        margin-bottom: 0.5rem;
+    }
+}
+
+.contact-content.show {
+    display: none;
+}
+
+.contact-underline {
+    display: block;
+    background-color: $light-gray;
+    width: 100px;
+    height: 3px;
+    margin: 0.8rem 0rem;
+}
+
+.contact-email {
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+}
+
+.socialmedia-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.github-icon svg,
+.linkedin-icon svg {
+    fill: $light-gray;
+    width: 40px;
+    height: auto;
 }

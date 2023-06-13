@@ -1,6 +1,6 @@
 // import {useState, useEffect} from 'react';
 
-function About({restBase, restData}) {
+function About({restData}) {
 
   return (
     <section className='about-section' id='about'>
