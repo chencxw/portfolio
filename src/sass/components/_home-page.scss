@@ -215,6 +215,12 @@
     border-color: $black transparent transparent transparent;
 }
 
+@media(min-width: 62.5em) {
+    .tooltipText {
+        bottom: 90%;
+    }
+}
+
 .socialmedia-icons {
     display: flex;
     justify-content: center;

@@ -21,11 +21,14 @@ function Contact({restData}) {
     function handleCopyText() {
         navigator.clipboard.writeText('contact@crystalchen.ca');
         setShowTooltip(true);
+        setTimeout(() => {
+            setShowTooltip(false);
+        }, 800)
     }
 
-    function disableTooltip() {
-        setShowTooltip(false);
-    }
+    // function disableTooltip() {
+    //     setShowTooltip(false);
+    // }
 
     return (
         <section className="contact-section" id="contact">
@@ -33,7 +36,7 @@ function Contact({restData}) {
             <p className={matchesQuery ? "contact-content show" : "contact-content"}>{restData.acf.contact_content}</p>
             <span className="contact-underline"></span>
             <div className='tooltip'>
-                <button className="contact-email" id="pulse-btn" onClick={handleCopyText} onMouseOut={disableTooltip}>
+                <button className="contact-email" id="pulse-btn" onClick={handleCopyText} >
                     <span className={showTooltip ? "tooltipText show" : "tooltipText"}>{copyDisplayText}</span>
                     contact@crystalchen.ca
                 </button>
