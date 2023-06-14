@@ -148,7 +148,9 @@
     letter-spacing: 2px;
     color: $dark-gray;
     margin: 1rem 0rem;
-
+    &:hover {
+        color: $black;
+    }
 }
 
 #pulse-btn {
@@ -213,6 +215,13 @@
     border-width: 5px;
     border-style: solid;
     border-color: $black transparent transparent transparent;
+}
+
+@media(min-width: 50em) {
+    .contact-email:hover .tooltipText {
+        visibility: visible;
+        opacity: 1;
+    }
 }
 
 @media(min-width: 62.5em) {

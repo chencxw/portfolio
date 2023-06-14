@@ -8,6 +8,7 @@ function PageHome({restBase, handleDisplayLoading}) {
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
     const [matches, setMatches] = useState(false);
+    const query = "(min-width: 800px)";
 
     // API call
     useEffect(() => {
@@ -34,7 +35,8 @@ function PageHome({restBase, handleDisplayLoading}) {
     }
 
     useEffect(() => {
-        let mediaQuery = window.matchMedia('(min-width: 800px)');
+        const mediaQuery = window.matchMedia(query);
+        setMatches(mediaQuery.matches);
         mediaQuery.addEventListener('change', checkDesktop);
         return () => mediaQuery.removeEventListener('change', checkDesktop);
     })
@@ -44,27 +46,27 @@ function PageHome({restBase, handleDisplayLoading}) {
             {isLoaded ?
                 <>
                 <section className='landing-section' id="landing-section">
-                     <div class="letters">
-                        <span class="letter">C</span>
-                        <span class="letter">R</span>
-                        <span class="letter">Y</span>
-                        <span class="letter">S</span>
-                        <span class="letter">T</span>
-                        <span class="letter">A</span>
-                        <span class="letter">L</span>
-                        <span class="letter">{matches ? "" : <br></br> }</span>
-                        <span class="letter">C</span>
-                        <span class="letter">H</span>
-                        <span class="letter">E</span>
-                        <span class="letter">N</span>
-                        <span class="letter">.</span>
+                     <div className="letters">
+                        <span className="letter">C</span>
+                        <span className="letter">R</span>
+                        <span className="letter">Y</span>
+                        <span className="letter">S</span>
+                        <span className="letter">T</span>
+                        <span className="letter">A</span>
+                        <span className="letter">L</span>
+                        <span className="letter">{matches ? "" : <br></br> }</span>
+                        <span className="letter">C</span>
+                        <span className="letter">H</span>
+                        <span className="letter">E</span>
+                        <span className="letter">N</span>
+                        <span className="letter">.</span>
                     </div>
                     <div className="job-title" >
                         <h2 dangerouslySetInnerHTML={{__html:restData.acf.job_title}}></h2>
                     </div>
                 </section>
                 <About restData={restData} />
-                <Contact restData={restData}/>
+                <Contact restData={restData} matches={matches}/>
                 </>
             :
                 <Loading />

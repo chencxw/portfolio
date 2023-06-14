@@ -1,21 +1,21 @@
 import {useState, useEffect} from 'react';
 import { githubSVG, linkedinSVG } from "../globals/globals";
 
-function Contact({restData}) {
+function Contact({restData, matches}) {
     const [matchesQuery, setMatchesQuery] = useState(false);
-    const [copyDisplayText, setCopyDisplayText] = useState("Copied to clipboard");
+    const [copyDisplayText, setCopyDisplayText] = useState("Copy to clipboard");
     const [showTooltip, setShowTooltip] = useState(false);
 
     // Media query
-    function handleMediaChange(e) {
-        setMatchesQuery(e.matches)
-    }
+    // function handleMediaChange(e) {
+    //     setMatchesQuery(e.matches)
+    // }
 
-    useEffect(() => {
-        let mediaQuery = window.matchMedia('(min-width: 800px)');
-        mediaQuery.addEventListener('change', handleMediaChange);
-        return () => mediaQuery.removeEventListener('change', handleMediaChange);
-    })
+    // useEffect(() => {
+    //     let mediaQuery = window.matchMedia('(min-width: 800px)');
+    //     mediaQuery.addEventListener('change', handleMediaChange);
+    //     return () => mediaQuery.removeEventListener('change', handleMediaChange);
+    // })
 
     // Functions
     function handleCopyText() {
@@ -26,18 +26,24 @@ function Contact({restData}) {
         }, 800)
     }
 
-    // function disableTooltip() {
-    //     setShowTooltip(false);
-    // }
+    function handleCopyTextDesktop() {
+        setCopyDisplayText("Copied!");
+        setShowTooltip(true);
+    }
+
+    function disableTooltip() {
+        setShowTooltip(false);
+        setCopyDisplayText("Copy to clipboard");
+    }
 
     return (
         <section className="contact-section" id="contact">
             <h2>Contact.</h2>
-            <p className={matchesQuery ? "contact-content show" : "contact-content"}>{restData.acf.contact_content}</p>
+            <p className={matches ? "contact-content show" : "contact-content"}>{restData.acf.contact_content}</p>
             <span className="contact-underline"></span>
             <div className='tooltip'>
-                <button className="contact-email" id="pulse-btn" onClick={handleCopyText} >
-                    <span className={showTooltip ? "tooltipText show" : "tooltipText"}>{copyDisplayText}</span>
+                <button className="contact-email" id="pulse-btn" onClick={matches ? handleCopyTextDesktop : handleCopyText} onMouseOut={matches ? disableTooltip : null}>
+                    <span className={showTooltip ? "tooltipText show" : "tooltipText"}>{matches ? copyDisplayText : "Copied!"}</span>
                     contact@crystalchen.ca
                 </button>
             </div>
