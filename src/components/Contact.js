@@ -3,6 +3,8 @@ import { githubSVG, linkedinSVG } from "../globals/globals";
 
 function Contact({restData}) {
     const [matchesQuery, setMatchesQuery] = useState(false);
+    const [copyDisplayText, setCopyDisplayText] = useState("Copied to clipboard");
+    const [showTooltip, setShowTooltip] = useState(false);
 
     // Media query
     function handleMediaChange(e) {
@@ -15,12 +17,27 @@ function Contact({restData}) {
         return () => mediaQuery.removeEventListener('change', handleMediaChange);
     })
 
+    // Functions
+    function handleCopyText() {
+        navigator.clipboard.writeText('contact@crystalchen.ca');
+        setShowTooltip(true);
+    }
+
+    function disableTooltip() {
+        setShowTooltip(false);
+    }
+
     return (
         <section className="contact-section" id="contact">
             <h2>Contact.</h2>
-            <p className={matchesQuery ? "contact-conten show" : "contact-content"}>{restData.acf.contact_content}</p>
+            <p className={matchesQuery ? "contact-content show" : "contact-content"}>{restData.acf.contact_content}</p>
             <span className="contact-underline"></span>
-            <a href={`mailto:${restData.acf.contact_email}`} className="contact-email" ><p>contact@crystalchen.ca</p></a>
+            <div className='tooltip'>
+                <button className="contact-email" id="pulse-btn" onClick={handleCopyText} onMouseOut={disableTooltip}>
+                    <span className={showTooltip ? "tooltipText show" : "tooltipText"}>{copyDisplayText}</span>
+                    contact@crystalchen.ca
+                </button>
+            </div>
             <div className="socialmedia-icons">
                 <a href={`${restData.acf.github_link}`} className="github-icon">{githubSVG}</a>
                 <a href={`${restData.acf.linkedin_link}`} className="linkedin-icon" >{linkedinSVG}</a>
