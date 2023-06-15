@@ -52,7 +52,7 @@ function Contact({restData, matches}) {
         contactTL.to(buttonElement, {rotate: -3});
         contactTL.to(buttonElement, {rotate: 0});
         contactTL.to(buttonElement, {scale: 1});
-    })
+    }, [matches])
 
     return (
         <section className="contact-section" id="contact">
