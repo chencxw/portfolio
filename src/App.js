@@ -5,6 +5,7 @@ import { useState } from 'react';
 // Components
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
+import Footer from './components/Footer';
 
 // Pages
 import PageHome from './pages/PageHome';
@@ -45,6 +46,7 @@ function App() {
           </Routes>
           <Sidebar restBase={restBase}/>
         </main>
+        <Footer />
       </div>
     </BrowserRouter>
   );
