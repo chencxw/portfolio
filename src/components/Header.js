@@ -52,8 +52,8 @@ function Header({restBase, displayLoading}) {
                 <nav className="site-navigation" >
                     <ul onClick={closeNavMenu}>
                         <li><HashLink smooth to="/#home">Home</HashLink></li>
-                        <li><HashLink smooth to="/#about">About</HashLink></li>
                         <li><NavLink to="/">Projects</NavLink></li>
+                        <li><HashLink smooth to="/#about">About</HashLink></li>
                         <li><HashLink smooth to="/#contact">Contact</HashLink></li>
                     </ul>
                 </nav>
