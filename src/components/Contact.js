@@ -11,7 +11,7 @@ function Contact({restData, matches}) {
 
     // Functions
     function handleCopyText() {
-        navigator.clipboard.writeText('contact@crystalchen.ca');
+        navigator.clipboard.writeText(restData.acf.contact_email);
         setShowTooltip(true);
         setTimeout(() => {
             setShowTooltip(false);
@@ -19,6 +19,7 @@ function Contact({restData, matches}) {
     }
 
     function handleCopyTextDesktop() {
+        navigator.clipboard.writeText(restData.acf.contact_email);
         setCopyDisplayText("Copied!");
         setShowTooltip(true);
     }
@@ -68,7 +69,7 @@ function Contact({restData, matches}) {
                     onMouseOut={matches ? disableTooltip : null} 
                 >
                     <span className={showTooltip ? "tooltipText show" : "tooltipText"}>{matches ? copyDisplayText : "Copied!"}</span>
-                    contact@crystalchen.ca
+                    {restData.acf.contact_email}
                 </button>
             </div>
             <div className="socialmedia-icons">
