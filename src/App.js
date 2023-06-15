@@ -1,14 +1,17 @@
 // Development Components
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
 
 // Components
 import Header from './components/Header';
 
 // Pages
 import PageHome from './pages/PageHome';
+import PageIndividualProject from './pages/PageIndividualProject';
 
 function App() {
   const restBase = 'https://crystalchen.ca/wp-portfolio/wp-json/wp/v2/'
+  const [displayLoading, setDisplayLoading] = useState(true);
   
   const featuredImage = ( featuredImageObject ) => {
     let imgWidth = featuredImageObject.media_details.sizes.full.width;
@@ -26,14 +29,21 @@ function App() {
     return {__html: img}
   }
 
+  function handleDisplayLoading() {
+    setDisplayLoading(false);
+  }
+
   return (
     <BrowserRouter>
-    <Header restBase={restBase}/>
+      <div className='site' id='home'>
+        <Header restBase={restBase} displayLoading={displayLoading}/>
         <main>
           <Routes>
-            <Route path="/" exact element={<PageHome restBase={restBase} />}/>
+            <Route path="/" exact element={<PageHome restBase={restBase} handleDisplayLoading={handleDisplayLoading}/>}/>
+            <Route path="/" exact element={<PageIndividualProject restBase={restBase} handleDisplayLoading={handleDisplayLoading}/>}/>
           </Routes>
         </main>
+      </div>
     </BrowserRouter>
   );
 }

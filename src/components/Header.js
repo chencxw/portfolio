@@ -1,7 +1,9 @@
 import {useState, useEffect} from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import {HashLink} from 'react-router-hash-link';
+import logoGIF from '../images/logo.gif';
 
-function Header({restBase}) {
+function Header({restBase, displayLoading}) {
     const restPath = restBase + 'pages/6?acf_format=standard'
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
@@ -38,7 +40,7 @@ function Header({restBase}) {
         {isLoaded && 
             <header className={ navOpen ? 'site-header show' : 'site-header'}>
                 <Link className="logo">
-                    <img src={`${restData.acf.logo}`} alt="logo" />
+                    {displayLoading ? <img src={logoGIF} alt="Loading Logo" /> : <img src={`${restData.acf.logo}`} alt="logo" />}
                 </Link>
                 <button className="menu-btn" onMouseDown={(e) => {e.preventDefault();}} onClick={showHideNav} >
                     <span className="plusIcon">
@@ -49,10 +51,10 @@ function Header({restBase}) {
                 </button>
                 <nav className="site-navigation" >
                     <ul onClick={closeNavMenu}>
-                        <li><NavLink to="/">Home</NavLink></li>
-                        <li><NavLink to="/">About</NavLink></li>
+                        <li><HashLink smooth to="/#home">Home</HashLink></li>
+                        <li><HashLink smooth to="/#about">About</HashLink></li>
                         <li><NavLink to="/">Projects</NavLink></li>
-                        <li><NavLink to="/">Contact</NavLink></li>
+                        <li><HashLink smooth to="/#contact">Contact</HashLink></li>
                     </ul>
                 </nav>
             </header>

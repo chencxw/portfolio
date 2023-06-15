@@ -40,11 +40,15 @@
 @import "base/typography";
 @import "base/variables";
 @import "base/elements";
+@import "base/body";
 
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
+@import "components/loading";
 @import "components/header";
+@import "components/home-page";
+@import "components/name-title";
 
 /*--------------------------------------------------------------
 # Utilities
