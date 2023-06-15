@@ -35,7 +35,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className='site'>
+      <div className='site' id='home'>
         <Header restBase={restBase} displayLoading={displayLoading}/>
         <main>
           <Routes>

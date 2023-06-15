@@ -45,7 +45,7 @@ function PageHome({restBase, handleDisplayLoading}) {
         <>
             {isLoaded ?
                 <>
-                <section className='landing-section' id="landing-section">
+                <section className='landing-section'>
                      <div className="letters">
                         <span className="letter">C</span>
                         <span className="letter">R</span>

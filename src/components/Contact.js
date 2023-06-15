@@ -41,7 +41,7 @@ function Contact({restData, matches}) {
             trigger: buttonElement
         })
 
-        if(matches == true) {
+        if(matches === true) {
             contactTL.fromTo(underlineElement, {width: 0}, {width: 200, duration: 0.7, delay: 0.4});
         }else {
             contactTL.fromTo(underlineElement, {width: 0}, {width: 100, duration: 0.7, delay: 0.4});
