@@ -20,3 +20,21 @@ a {
         color: $black;
     }
 }
+
+svg {
+    width: 40px;
+    height: auto;
+    fill: $dark-gray;
+}
+
+a:hover {
+    svg {
+        fill: $black;
+    }
+}
+
+@media(min-width: 50em) {
+    svg {
+        width: 50px;
+    }
+}

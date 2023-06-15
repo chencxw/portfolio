@@ -210,20 +210,6 @@
     margin-top: 1rem;
 }
 
-.github-icon svg,
-.linkedin-icon svg {
-    fill: $light-gray;
-    width: 40px;
-    height: auto;
-}
-
-.github-icon:hover,
-.linkedin-icon:hover {
-    svg {
-        fill: $dark-gray;
-    }
-}
-
 @media(min-width: 50em) {
     .contact-content.show {
         margin: 0rem 0rem 1.8rem;
@@ -237,8 +223,7 @@
         margin: 2rem 0rem;
     }
 
-    .github-icon svg,
-    .linkedin-icon svg {
-        width: 50px;
+    .socialmedia-icons {
+        display: none;
     }
 }
