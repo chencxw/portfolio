@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 // Components
 import Header from './components/Header';
+import Sidebar from './components/Sidebar';
 
 // Pages
 import PageHome from './pages/PageHome';
@@ -42,6 +43,7 @@ function App() {
             <Route path="/" exact element={<PageHome restBase={restBase} handleDisplayLoading={handleDisplayLoading}/>}/>
             <Route path="/" exact element={<PageIndividualProject restBase={restBase} handleDisplayLoading={handleDisplayLoading}/>}/>
           </Routes>
+          <Sidebar restBase={restBase}/>
         </main>
       </div>
     </BrowserRouter>

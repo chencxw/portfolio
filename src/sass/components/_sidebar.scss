@@ -1,0 +1,28 @@
+.sidebar {
+    display: none;
+    svg {
+        width: 40px;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.sidebar-line {
+    background-color: $light-gray;
+    width: 2px;
+    height: 150px;
+}
+
+@media(min-width:50em) {
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        position: fixed;
+        bottom: 6rem;
+        right: 2.25rem;
+
+    }
+}
