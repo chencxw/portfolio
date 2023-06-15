@@ -9,11 +9,6 @@
     img{
         width: 70px;
     }
-
-    // &:hover svg {
-    //     fill: #000;
-    // }
-
 }
 
 .menu-btn {
@@ -128,8 +123,8 @@
         box-shadow: none;
         margin-top: 5px;
         transition: width 2.5s ease-in-out;
-        width: 65px;
-        height: 65px;
+        width: 70px;
+        height: 70px;
         &:hover .line {
             background-color: $black;
             width: 55px;
@@ -138,7 +133,7 @@
 
     .plusIcon {
         .line {
-            background-color: $dark-gray;
+            background-color: $light-gray;
             width: 50px;
         }
     }
