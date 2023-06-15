@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 
 // Pages
 import PageHome from './pages/PageHome';
+import AllProjectsPage from './pages/AllProjectsPage';
 import PageIndividualProject from './pages/PageIndividualProject';
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" exact element={<PageHome restBase={restBase} handleDisplayLoading={handleDisplayLoading}/>}/>
+            <Route path="/all-projects" exact element={<AllProjectsPage restBase={restBase} handleDisplayLoading={handleDisplayLoading}/>}/>
             <Route path="/" exact element={<PageIndividualProject restBase={restBase} handleDisplayLoading={handleDisplayLoading}/>}/>
           </Routes>
           <Sidebar restBase={restBase}/>

@@ -4,7 +4,7 @@ import About from '../components/About';
 import Contact from '../components/Contact';
 
 function PageHome({restBase, handleDisplayLoading}) {
-    const restPath = restBase + 'pages/6?acf_format=standard&test=test';
+    const restPath = restBase + 'pages/6?acf_format=standard';
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
     const [matches, setMatches] = useState(false);

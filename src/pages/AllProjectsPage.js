@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 
-function PageIndividualProject({restBase, handleDisplayLoading}) {
-    const restPath = restBase + 'pages/6';
+function AllProjectsPage({restBase, handleDisplayLoading}) {
+    const restPath = restBase + 'posts?_embed';
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
 
@@ -24,18 +24,10 @@ function PageIndividualProject({restBase, handleDisplayLoading}) {
 
     }, [restPath])
     
-  return (
-    <>
-        {isLoaded &&
-            <section>
-            </section>
-            // <article>
-            //     <div dangerouslySetInnerHTML={{__html:restData.acf.role_list}}>
-            //     </div>
-            // </article>
-        }
-    </>
-  )
-}
+    return (
+        <div className='all-projects'>
 
-export default PageIndividualProject
+        </div>
+    )
+}
+export default AllProjectsPage
