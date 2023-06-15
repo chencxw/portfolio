@@ -25,7 +25,7 @@ function PageHome({restBase, handleDisplayLoading}) {
                 }
             }
             fetchData()
-        }, 1300)
+        }, 500)
 
     }, [restPath])
 
