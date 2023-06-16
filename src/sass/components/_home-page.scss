@@ -1,6 +1,6 @@
 // Landing Section
 .landing-section {
-    height: 90vh;
+    height: 85vh;
     padding-top: 10rem;
 }
 
@@ -38,12 +38,12 @@
 
 @media( min-width: 50em) {
     .landing-section {
-        margin-top: 98.22px;
+        margin-top: 5rem;
     }
 
-    .job-title{
-        margin-top: 23vh;
-    }
+    // .job-title{
+    //     margin-top: 20vh;
+    // }
 }
 
 @media( min-width:62.5em ) {
