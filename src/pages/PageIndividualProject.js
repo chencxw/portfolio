@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 
-function PageIndividualProject({restBase, handleDisplayLoading}) {
+function PageIndividualProject({restBase, handleDisplayLoadingGIF}) {
     const restPath = restBase + 'pages/6';
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
@@ -14,7 +14,7 @@ function PageIndividualProject({restBase, handleDisplayLoading}) {
                     const data = await response.json()
                     setData(data)
                     setLoadStatus(true)
-                    handleDisplayLoading();
+                    handleDisplayLoadingGIF();
                 } else {
                     setLoadStatus(false)
                 }

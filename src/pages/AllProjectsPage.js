@@ -1,12 +1,13 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useContext} from 'react';
 
-function AllProjectsPage({restBase, handleDisplayLoading}) {
+function AllProjectsPage({restBase, handleDisplayLoadingGIF}) {
     const restPath = restBase + 'posts?_embed';
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
 
     // API call
     useEffect(() => {
+        handleDisplayLoadingGIF(true);
         setTimeout(() => {
             const fetchData = async () => {
                 const response = await fetch(restPath)
@@ -14,20 +15,24 @@ function AllProjectsPage({restBase, handleDisplayLoading}) {
                     const data = await response.json()
                     setData(data)
                     setLoadStatus(true)
-                    handleDisplayLoading();
+                    handleDisplayLoadingGIF(false);
                 } else {
                     setLoadStatus(false)
                 }
             }
             fetchData()
         }, 1040)
-
     }, [restPath])
     
+    
     return (
-        <div className='all-projects'>
+        <>
+        {isLoaded && 
+            <div className='all-projects'>
 
-        </div>
+            </div>
+        }
+        </>
     )
 }
 export default AllProjectsPage

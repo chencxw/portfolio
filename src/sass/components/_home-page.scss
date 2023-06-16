@@ -10,6 +10,9 @@
 
     h2 {
         color: $dark-gray;
+        font-weight: 400;
+        font-size: 1.6rem;
+        margin-bottom: 2.5rem;
     }
 
     &::after {
@@ -22,11 +25,6 @@
         animation-duration: 1s;
         animation-delay: 1.7s;
         animation-fill-mode: forwards;
-    }
-
-    h2 {
-        font-weight: 400;
-        font-size: 1.6rem;
     }
 }
 @keyframes job-title-border {
@@ -132,7 +130,7 @@
 
 .contact-content.show {
     display: block;
-    font-size: clamp(19.2px, 2vw, 24px);
+    font-size: clamp(19.2px, 2vw, 22px);
 }
 
 .contact-underline {

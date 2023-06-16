@@ -14,7 +14,7 @@ import PageIndividualProject from './pages/PageIndividualProject';
 
 function App() {
   const restBase = 'https://crystalchen.ca/wp-portfolio/wp-json/wp/v2/'
-  const [displayLoading, setDisplayLoading] = useState(true);
+  const [displayLoadingGIF, setDisplayLoadingGIF] = useState(true);
   
   const featuredImage = ( featuredImageObject ) => {
     let imgWidth = featuredImageObject.media_details.sizes.full.width;
@@ -32,25 +32,26 @@ function App() {
     return {__html: img}
   }
 
-  function handleDisplayLoading() {
-    setDisplayLoading(false);
+  function handleDisplayLoadingGIF(booleanValue) {
+    setDisplayLoadingGIF(booleanValue);
   }
 
   return (
     <BrowserRouter>
       <div className='site' id='home'>
-        <Header restBase={restBase} displayLoading={displayLoading}/>
+        <Header restBase={restBase} displayLoadingGIF={displayLoadingGIF}/>
         <main>
           <Routes>
-            <Route path="/" exact element={<PageHome restBase={restBase} handleDisplayLoading={handleDisplayLoading}/>}/>
-            <Route path="/all-projects" exact element={<AllProjectsPage restBase={restBase} handleDisplayLoading={handleDisplayLoading}/>}/>
-            <Route path="/" exact element={<PageIndividualProject restBase={restBase} handleDisplayLoading={handleDisplayLoading}/>}/>
+            <Route path="/" exact element={<PageHome restBase={restBase} handleDisplayLoadingGIF={handleDisplayLoadingGIF}/>}/>
+            <Route path="/all-projects" exact element={<AllProjectsPage restBase={restBase} handleDisplayLoadingGIF={handleDisplayLoadingGIF}/>}/>
+            <Route path="/" exact element={<PageIndividualProject restBase={restBase} />}/>
           </Routes>
           <Sidebar restBase={restBase}/>
         </main>
         <Footer />
       </div>
     </BrowserRouter>
+
   );
 }
 

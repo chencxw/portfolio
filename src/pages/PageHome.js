@@ -3,7 +3,7 @@ import Loading from '../components/Loading';
 import About from '../components/About';
 import Contact from '../components/Contact';
 
-function PageHome({restBase, handleDisplayLoading}) {
+function PageHome({restBase, handleDisplayLoadingGIF}) {
     const restPath = restBase + 'pages/6?acf_format=standard';
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
@@ -12,7 +12,7 @@ function PageHome({restBase, handleDisplayLoading}) {
 
     // API call
     useEffect(() => {
-        handleDisplayLoading();
+        handleDisplayLoadingGIF(false);
         setTimeout(() => {
             const fetchData = async () => {
                 const response = await fetch(restPath)
