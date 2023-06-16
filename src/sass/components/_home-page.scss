@@ -1,7 +1,10 @@
 // Landing Section
 .landing-section {
     height: 85vh;
-    padding-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 3rem;
 }
 
 .job-title {
@@ -36,21 +39,7 @@
    }
 }
 
-@media( min-width: 50em) {
-    .landing-section {
-        margin-top: 5rem;
-    }
-
-    // .job-title{
-    //     margin-top: 20vh;
-    // }
-}
-
 @media( min-width:62.5em ) {
-    .landing-section {
-        padding-top: 7rem;
-    }
-
     .job-title h2 {
         font-size: clamp(30px, 2vw, 45px);
     }

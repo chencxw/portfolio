@@ -4,6 +4,12 @@
 
 @media( min-width: 31.25em) {
     main {
-        padding:  0rem 10vw;
+        padding: 0 10vw;
+    }
+}
+
+@media (min-width: 50em) {
+    main {
+        padding-top: 73px;
     }
 }
