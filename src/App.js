@@ -32,6 +32,7 @@ function App() {
     return {__html: img}
   }
 
+  // Helper function to display loading gif in header
   function handleDisplayLoadingGIF(booleanValue) {
     setDisplayLoadingGIF(booleanValue);
   }
