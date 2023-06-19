@@ -21,7 +21,7 @@ function AllProjectsPage({restBase, handleDisplayLoadingGIF}) {
                 }
             }
             fetchData()
-        }, 1040)
+        }, 1000)
     }, [restPath])
     
     

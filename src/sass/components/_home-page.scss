@@ -214,3 +214,27 @@
         display: none;
     }
 }
+
+// Featured Projects
+.featured-projects {
+    .featured-image img {
+        width: 500px;
+        height: auto;
+    }
+}
+.all-projects-link {
+    svg {
+        vertical-align: middle;
+        width: 30px;
+        height: auto;
+        path {
+            stroke: $primary-color;
+            stroke-width: 1.5px;
+        }
+    }
+}
+
+.arrow-span {
+    display: inline-block;
+    margin-left: 0.5rem;
+}

@@ -43,7 +43,7 @@ function App() {
         <Header restBase={restBase} displayLoadingGIF={displayLoadingGIF}/>
         <main>
           <Routes>
-            <Route path="/" exact element={<PageHome restBase={restBase} handleDisplayLoadingGIF={handleDisplayLoadingGIF}/>}/>
+            <Route path="/" exact element={<PageHome restBase={restBase} handleDisplayLoadingGIF={handleDisplayLoadingGIF} featuredImage={featuredImage} />}/>
             <Route path="/all-projects" exact element={<AllProjectsPage restBase={restBase} handleDisplayLoadingGIF={handleDisplayLoadingGIF}/>}/>
             <Route path="/" exact element={<PageIndividualProject restBase={restBase} />}/>
           </Routes>
