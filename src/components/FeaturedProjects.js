@@ -37,7 +37,9 @@ function FeaturedProjects({restBase, featuredImage}) {
                 <div className="project-titles">
                     <h3 className='project-title'>{project.title.rendered}</h3>
                     <h4 className='project-subtitle'>{project.acf.project_subtitle}</h4>
-                    <div className='more-info-arrow'>{lineArrowR}</div>
+                    <div className='more-info-arrow'>
+                        <span className='arrow-head'></span>
+                    </div>
                 </div>
             </article>
             )}
