@@ -47,7 +47,7 @@ function PageHome({restBase, handleDisplayLoadingGIF, featuredImage}) {
             {isLoaded ?
                 <>
                 <section className='landing-section'>
-                     <div className="letters">
+                    <div className="letters">
                         <span className="letter">C</span>
                         <span className="letter">R</span>
                         <span className="letter">Y</span>
