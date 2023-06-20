@@ -24,12 +24,12 @@ function Sidebar({restBase}) {
     return (
         <>
         {isLoaded && 
-            <div className='sidebar'>
+            <nav className='sidebar'>
                 <div className='sidebar-line'></div>
                 <a href={`${restData.acf.contact_email}`}>{mailSVG}</a>
                 <a href={`${restData.acf.github_link}`}>{githubSVG}</a>
                 <a href={`${restData.acf.linkedin_link}`}>{linkedinSVG}</a>
-            </div>}
+            </nav>}
         </>
     )
 }
