@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
 
 .job-title {
@@ -213,4 +213,202 @@
     .socialmedia-icons {
         display: none;
     }
+}
+
+// Featured Projects
+.featured-projects {
+    margin-bottom: 10rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    h2 {
+        grid-column: 1/-1;
+    }
+    .featured-image {
+        margin: 0;
+        width: clamp(250px, 50vw, 550px); 
+        height: clamp(250px, 45vw, 450px); 
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        img {
+        height: auto;
+        filter: grayscale(100%);
+        }
+    }
+
+    article {
+        justify-self: center;
+        margin-bottom: 5rem;
+        width: fit-content;
+        &:hover {
+            h3 {
+                color: $primary-color;
+            }
+            h4 {
+                color: $black;
+            }
+            .featured-image img {
+                filter: grayscale(0%);
+            }
+        }
+    }
+}
+
+.all-projects-link {
+    justify-self: center;
+    grid-column: 1/-1;
+
+    svg {
+        vertical-align: middle;
+        width: 30px;
+        height: auto;
+        path {
+            stroke: $primary-color;
+            stroke-width: 1.5px;
+        }
+    }
+    @media (min-width: 43.75em) {
+        font-size: 1.3rem;
+    }
+
+    @media(min-width: 53.125em) {
+        &:hover {
+            transform: scale(1.07);
+        }
+    }
+
+    @media(min-width: 81.25em) {
+        font-size: 1.5rem;
+        svg {
+            width: 38px;
+        }
+    }
+}
+
+.arrow-span {
+    display: inline-block;
+    margin-left: 0.5rem;
+}
+
+.project-titles {
+    position: relative;
+}
+
+.more-info-arrow {
+    position: absolute;
+    top: 30%;
+    right: 0;
+    width: 55px;
+    &::before {
+        content: "";
+        display: inline-block;
+        width: 51px;
+        height: 3px;
+        border-radius: 2rem;
+        transform-origin: right;
+        background-color: $black;
+        transition: transform 300ms ease;
+        z-index: 10;
+    }
+
+    span {
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            right: 0%;
+            bottom: 4.3px;
+            background: $black;
+            transition: transform 200ms cubic-bezier(0.3, 1.5, 0.5, 1);
+            transition-delay: 240ms;
+            z-index: 2;
+            border-radius: 2rem;
+        }
+
+        &::before {
+            width: 3px;
+            height: 20px;
+            transform-origin: 0% 100%;
+            transform: rotate(-65deg);
+        }
+
+        &::after {
+            height: 3px;
+            width: 20px;
+            transform-origin: 100% 0%;
+            transform: translateX(-2px) rotate(-30deg);
+        }
+    }
+}
+
+@media(min-width: 53.125em) {
+    .featured-projects {
+        grid-template-columns: 1fr minmax(auto, 650px);
+        .featured-image {
+            width: clamp(250px, 35vw, 650px);
+            height: clamp(250px, 30vw, 400px);
+        }
+
+        article {
+            justify-self: start;
+            &:hover .more-info-arrow {
+                opacity: 1;
+                &::before {
+                    transform-origin: left;
+                    transform: scaleX(1);
+                }
+
+                span {
+                    --deg: -45deg;
+                    &::before {
+                        transform: rotate(-65deg);
+                        opacity: 1;
+                    }
+                    &::after {
+                        transform: translateX(-1.5px) rotate(-30deg);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        h2 {
+            grid-column: 1/2;
+        }
+    }
+
+    #feature-project-120 {
+        margin-right: 1rem;
+    }
+
+    #feature-project-48 {
+        justify-self: end;
+    }
+
+    .more-info-arrow {
+        &::before {
+            transform: scaleX(0);
+        }
+
+        span {   
+            &::before {
+                transform: rotate(-90deg);
+                opacity: 0;
+            }
+    
+            &::after {
+                transform: translateX(-2px) rotate(0deg);
+                opacity: 0;
+            }
+        }
+    }
+
+    .all-projects-link {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        align-self: end;
+        margin-bottom: 4rem;
+        justify-self: end;
+    }
+
 }

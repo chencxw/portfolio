@@ -9,6 +9,7 @@ function Header({restBase, displayLoadingGIF}) {
     const [isLoaded, setLoadStatus] = useState(false)
     const [navOpen, setNavOpen] = useState(false);
 
+    // API call
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch(restPath)
@@ -23,16 +24,13 @@ function Header({restBase, displayLoadingGIF}) {
         fetchData()
     }, [restPath])
 
+    // Functions to open and close nav menu
     function showHideNav() {
         setNavOpen(!navOpen);
     }
 
     function closeNavMenu(e){
-        if(window.innerWidth < 800) {
-          showHideNav();
-        }else{
-          e.target.blur();
-        }
+        showHideNav();
     }
 
     return (

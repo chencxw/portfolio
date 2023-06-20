@@ -1,7 +1,7 @@
 import {useState, useEffect, useContext} from 'react';
 
 function AllProjectsPage({restBase, handleDisplayLoadingGIF}) {
-    const restPath = restBase + 'posts?_embed';
+    const restPath = restBase + 'posts?_embed&acf_format=standard';
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
 
@@ -21,7 +21,7 @@ function AllProjectsPage({restBase, handleDisplayLoadingGIF}) {
                 }
             }
             fetchData()
-        }, 1040)
+        }, 1000)
     }, [restPath])
     
     

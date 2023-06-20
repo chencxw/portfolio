@@ -1,9 +1,10 @@
 import {useState, useEffect} from 'react';
 import Loading from '../components/Loading';
+import FeaturedProjects from '../components/FeaturedProjects';
 import About from '../components/About';
 import Contact from '../components/Contact';
 
-function PageHome({restBase, handleDisplayLoadingGIF}) {
+function PageHome({restBase, handleDisplayLoadingGIF, featuredImage}) {
     const restPath = restBase + 'pages/6?acf_format=standard';
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
@@ -46,7 +47,7 @@ function PageHome({restBase, handleDisplayLoadingGIF}) {
             {isLoaded ?
                 <>
                 <section className='landing-section'>
-                     <div className="letters">
+                    <div className="letters">
                         <span className="letter">C</span>
                         <span className="letter">R</span>
                         <span className="letter">Y</span>
@@ -65,6 +66,7 @@ function PageHome({restBase, handleDisplayLoadingGIF}) {
                         <h2 dangerouslySetInnerHTML={{__html:restData.acf.job_title}}></h2>
                     </div>
                 </section>
+                <FeaturedProjects restBase={restBase} featuredImage={featuredImage}/>
                 <About restData={restData} />
                 <Contact restData={restData} matches={matches}/>
                 </>

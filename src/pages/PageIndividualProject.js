@@ -7,6 +7,7 @@ function PageIndividualProject({restBase, handleDisplayLoadingGIF}) {
 
     // API call
     useEffect(() => {
+        handleDisplayLoadingGIF(true);
         setTimeout(() => {
             const fetchData = async () => {
                 const response = await fetch(restPath)
@@ -14,7 +15,7 @@ function PageIndividualProject({restBase, handleDisplayLoadingGIF}) {
                     const data = await response.json()
                     setData(data)
                     setLoadStatus(true)
-                    handleDisplayLoadingGIF();
+                    handleDisplayLoadingGIF(false);
                 } else {
                     setLoadStatus(false)
                 }
