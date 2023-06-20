@@ -1,0 +1,32 @@
+.all-projects {
+    &.project-grid {
+        margin-bottom: 5rem;
+    }
+
+    h2 {
+        margin-top: 2rem;
+    }
+}
+
+@media(min-width: 53.125em) {
+    .all-projects {
+        grid-template-columns: repeat(2, 1fr);
+
+        .featured-image {
+            width: clamp(250px, 30vw, 350px);
+            height: clamp(250px, 30vw, 350px);
+        }
+    }
+}
+
+@media(min-width: 81.25em) {
+    .all-projects {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0rem 1.5rem;
+
+        .featured-image {
+            width: clamp(250px, 24vw, 450px);
+            height: clamp(250px, 24vw, 450px);
+        }
+    }
+}
