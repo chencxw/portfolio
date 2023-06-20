@@ -12,9 +12,7 @@ function About({restData}) {
             <p>{restData.acf.toolkit_list}</p>
             <h4>Design</h4>
             <p>{restData.acf.toolkit_list_2}</p>
-
         </section>
-
     </section>
   )
 }

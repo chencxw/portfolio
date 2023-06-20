@@ -1,36 +1,38 @@
 import {useState, useEffect, useContext} from 'react';
+import ProjectGrid from '../components/ProjectGrid';
 
-function AllProjectsPage({restBase, handleDisplayLoadingGIF}) {
-    const restPath = restBase + 'posts?_embed&acf_format=standard';
-    const [restData, setData] = useState([]);
-    const [isLoaded, setLoadStatus] = useState(false);
+function AllProjectsPage({restBase, handleDisplayLoadingGIF, featuredImage}) {
+    const restPathProj = restBase + 'posts?_embed&acf_format=standard&categories=3&order=asc';
+    const [restDataProj, setDataProj] = useState([]);
+    const [isLoadedProj, setProjLoadStatus] = useState(false);
 
     // API call
     useEffect(() => {
         handleDisplayLoadingGIF(true);
-        setTimeout(() => {
             const fetchData = async () => {
-                const response = await fetch(restPath)
-                if ( response.ok ) {
-                    const data = await response.json()
-                    setData(data)
-                    setLoadStatus(true)
-                    handleDisplayLoadingGIF(false);
+                const response_projects = await fetch(restPathProj)
+                if ( response_projects.ok ) {
+                    const dataProj = await response_projects.json()
+                    setDataProj(dataProj)
+                    setProjLoadStatus(true)
+                    setTimeout(() => {
+                        handleDisplayLoadingGIF(false);
+                    }, 1000)
                 } else {
-                    setLoadStatus(false)
+                    setProjLoadStatus(false)
                 }
             }
             fetchData()
-        }, 1000)
-    }, [restPath])
+    }, [restPathProj])
     
     
     return (
         <>
-        {isLoaded && 
-            <div className='all-projects'>
-
-            </div>
+        {isLoadedProj && 
+            <section className='all-projects project-grid'>
+            <h2>All Projects.</h2>
+            <ProjectGrid data={restDataProj} featuredImage={featuredImage}/>
+            </section>
         }
         </>
     )

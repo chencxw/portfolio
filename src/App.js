@@ -44,7 +44,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" exact element={<PageHome restBase={restBase} handleDisplayLoadingGIF={handleDisplayLoadingGIF} featuredImage={featuredImage} />}/>
-            <Route path="/all-projects" exact element={<AllProjectsPage restBase={restBase} handleDisplayLoadingGIF={handleDisplayLoadingGIF}/>}/>
+            <Route path="/all-projects" exact element={<AllProjectsPage restBase={restBase} handleDisplayLoadingGIF={handleDisplayLoadingGIF} featuredImage={featuredImage} />}/>
             <Route path="/" exact element={<PageIndividualProject restBase={restBase} />}/>
           </Routes>
           <Sidebar restBase={restBase}/>

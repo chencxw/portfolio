@@ -14,19 +14,19 @@ function PageHome({restBase, handleDisplayLoadingGIF, featuredImage}) {
     // API call
     useEffect(() => {
         handleDisplayLoadingGIF(false);
-        setTimeout(() => {
-            const fetchData = async () => {
-                const response = await fetch(restPath)
-                if ( response.ok ) {
-                    const data = await response.json()
-                    setData(data)
+        const fetchData = async () => {
+            const response = await fetch(restPath)
+            if ( response.ok ) {
+                const data = await response.json()
+                setData(data)
+                setTimeout(() => {
                     setLoadStatus(true)
-                } else {
-                    setLoadStatus(false)
-                }
+                }, 500)
+            } else {
+                setLoadStatus(false)
             }
-            fetchData()
-        }, 500)
+        }
+        fetchData()
 
     }, [restPath])
 
