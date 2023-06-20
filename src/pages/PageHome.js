@@ -9,7 +9,9 @@ function PageHome({restBase, handleDisplayLoadingGIF, featuredImage}) {
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
     const [matches, setMatches] = useState(false);
+    const [matchesDesktop, setMatchesDesktop] = useState(false);
     const query = "(min-width: 800px)";
+    const query2 = "(min-width: 1024px)";
 
     // API call
     useEffect(() => {
@@ -30,16 +32,27 @@ function PageHome({restBase, handleDisplayLoadingGIF, featuredImage}) {
 
     }, [restPath])
 
-    // Media query
-    function checkDesktop(e) {
+    // Media queries
+    function checkTablet(e) {
         setMatches(e.matches)
     }
 
     useEffect(() => {
         const mediaQuery = window.matchMedia(query);
         setMatches(mediaQuery.matches);
-        mediaQuery.addEventListener('change', checkDesktop);
-        return () => mediaQuery.removeEventListener('change', checkDesktop);
+        mediaQuery.addEventListener('change', checkTablet);
+        return () => mediaQuery.removeEventListener('change', checkTablet);
+    })
+
+    function checkDesktop(e) {
+        setMatchesDesktop(e.matches)
+    }
+
+    useEffect(() => {
+        const mediaQuery2 = window.matchMedia(query2);
+        setMatchesDesktop(mediaQuery2.matches);
+        mediaQuery2.addEventListener('change', checkDesktop);
+        return () => mediaQuery2.removeEventListener('change', checkDesktop);
     })
 
     return (
@@ -68,7 +81,7 @@ function PageHome({restBase, handleDisplayLoadingGIF, featuredImage}) {
                 </section>
                 <FeaturedProjects restBase={restBase} featuredImage={featuredImage}/>
                 <About restData={restData} />
-                <Contact restData={restData} matches={matches}/>
+                <Contact restData={restData} matchesDesktop={matchesDesktop}/>
                 </>
             :
                 <Loading />

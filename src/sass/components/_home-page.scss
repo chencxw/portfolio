@@ -247,7 +247,7 @@
     border-color: $black transparent transparent transparent;
 }
 
-@media(min-width: 50em) {
+@media(min-width: 64em) {
     .contact-email:hover .tooltipText {
         visibility: visible;
         opacity: 1;
