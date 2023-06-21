@@ -42,6 +42,16 @@
     position: relative;
 }
 
+.project-subtitle {
+    width: 70%;
+}
+
+@media(min-width: 68.75em) {
+    .project-subtitle {
+        width: 100%;
+    }
+}
+
 .more-info-arrow {
     position: absolute;
     top: 30%;

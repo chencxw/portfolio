@@ -4,7 +4,7 @@ import { githubSVG, computerSVG } from '../globals/globals';
 
 function PageIndividualProject({restBase, handleDisplayLoadingGIF, featuredImage}) {
     const { slug } = useParams();
-    const restPath = restBase + `posts?_embed&acf_format=standard&slug=${slug}`;
+    const restPath = restBase + `posts?_embed&acf_format=standard&slug=${slug}&test=erer`;
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
 
