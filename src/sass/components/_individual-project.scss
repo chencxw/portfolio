@@ -1,0 +1,129 @@
+.project-landing-section {
+    height: 90vh;
+    min-height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h2 {
+        margin: 1rem 0rem 0rem;
+        font-size: 2.3rem;
+        font-weight: 500;
+    }
+
+    h3 {
+        margin: 0.5rem 0rem;
+        font-weight: 500;
+    }
+}
+
+.indvidual-proj-featured-image {
+    margin: -4rem auto 0rem;
+    width: 250px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    img {
+        width: 650px;
+        height: auto;
+    }
+}
+
+.proj-summary-section {
+    margin-bottom: 10rem;
+    h4 {
+        font-size: 1.7rem;
+        font-weight: 700;
+    }
+}
+
+.proj-overview {
+    margin-bottom: 3rem;
+}
+
+.proj-details {
+    h5 {
+        margin: 0rem 0rem 0.5rem;
+        font-size: 1.2rem;
+    }
+
+    p {
+        margin: 0rem 0rem 1.5rem;
+    }
+}
+
+.view-project-links {
+    a {
+        display: block;
+    }
+}
+
+.project-gallery {
+    figure {
+        width: 250px;
+        overflow: hidden;
+        display: flex;
+        margin: 0rem 0rem 5rem;
+        justify-content: center;
+        img {
+            width: 400px;
+        }
+    }
+}
+
+.project-accordion {
+    details {
+        margin-bottom: 4rem;
+
+        h4 {
+            margin-top: 3rem;
+        }
+
+        summary,
+        summary::-webkit-details-marker {
+            list-style: none;
+        }
+
+        summary {
+            font-size: 1.4rem;
+            font-weight: 700;
+            border-bottom: 2px solid $dark-gray;
+            position: relative;
+            cursor: pointer;
+        }
+
+        figure {
+            margin: 0rem 0rem 1.5rem;
+        }
+
+        img {
+            width: 250px;
+            height: auto;
+        }
+    }
+
+    .plusIcon {
+        display: inline-block;
+        position: absolute;
+        top: 10%;
+        right: 0;
+        .line {
+            background-color: $dark-gray;
+            width: 28px;
+            height: 3px;
+        }
+    }
+
+    details[open] .plusIcon {
+        span:nth-child(1) {
+            opacity: 0;
+            transform: rotate(-90deg);
+        }
+        span:nth-child(2) {
+            transform: translateY(-100%) rotate(0deg);
+        }
+    }
+
+    ul {
+        list-style: disc;
+    }
+}

@@ -5,8 +5,8 @@ function ProjectGrid({data, featuredImage}) {
     return (
         <>
         {data.map(project => 
-            <Link to={`/${project.slug}`}>
-            <article key={project.id} id={`project-${project.id}`}>
+            <Link to={`/${project.slug}`} key={project.id}>
+            <article id={`project-${project.id}`}>
                 { project.featured_media !== 0 && project._embedded['wp:featuredmedia'][0] &&
                     <figure className="featured-image" dangerouslySetInnerHTML={featuredImage(project._embedded['wp:featuredmedia'][0])}></figure>
                 }

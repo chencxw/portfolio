@@ -2,7 +2,7 @@ import {useState, useEffect, useContext} from 'react';
 import ProjectGrid from '../components/ProjectGrid';
 
 function AllProjectsPage({restBase, handleDisplayLoadingGIF, featuredImage}) {
-    const restPathProj = restBase + 'posts?_embed&categories=3&order=asc';
+    const restPathProj = restBase + 'posts?_embed&categories=3&order=asc&';
     const restPathPersonalProj = restBase + 'posts?_embed&categories=5';
     const [restDataProj, setDataProj] = useState([]);
     const [restDataPersonalProj, setDataPersonalProj] = useState([]);
