@@ -55,11 +55,9 @@
         vertical-align: middle;
         width: 30px;
         height: auto;
-        path {
-            stroke: $primary-color;
-            stroke-width: 1.5px;
-        }
+        fill: $primary-color;
     }
+
     @media (min-width: 43.75em) {
         font-size: 1.3rem;
     }
@@ -67,6 +65,9 @@
     @media(min-width: 53.125em) {
         &:hover {
             transform: scale(1.07);
+            svg {
+                fill: $primary-color;
+            }
         }
     }
 

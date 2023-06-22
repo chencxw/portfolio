@@ -14,10 +14,37 @@
         margin: 0.5rem 0rem;
         font-weight: 500;
     }
+
+    figure {
+        margin-top: 1rem;
+    }
+}
+
+.back-link {
+    margin-top: -6rem;
+    width: fit-content;
+    padding: 0;
+
+    &:hover {
+        color: $black;
+        svg {
+            fill: $primary-color;
+        }
+    }
+
+    svg {
+        width: 30px;
+        height: auto;
+        vertical-align: middle;
+        fill: $primary-color;
+        transform: scaleX(-1);
+        margin-top: -4px;
+    }
+
 }
 
 .indvidual-proj-featured-image {
-    margin: -4rem auto 0rem;
+    margin: 2rem auto 0rem;
     width: 250px;
     overflow: hidden;
     display: flex;
@@ -72,11 +99,7 @@
 
 .project-accordion {
     details {
-        margin-bottom: 4rem;
-
-        h4 {
-            margin-top: 3rem;
-        }
+        margin-bottom: 1rem;
 
         summary,
         summary::-webkit-details-marker {
@@ -89,6 +112,7 @@
             border-bottom: 2px solid $dark-gray;
             position: relative;
             cursor: pointer;
+            margin-bottom: 2rem;
         }
 
         figure {
@@ -109,7 +133,7 @@
         .line {
             background-color: $dark-gray;
             width: 28px;
-            height: 3px;
+            height: 2px;
         }
     }
 
@@ -125,5 +149,9 @@
 
     ul {
         list-style: disc;
+    }
+
+    details[open] {
+        padding-bottom: 2rem;
     }
 }

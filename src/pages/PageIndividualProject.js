@@ -1,12 +1,13 @@
 import {useState, useEffect} from 'react';
-import { useParams } from 'react-router-dom';
-import { githubSVG, computerSVG } from '../globals/globals';
+import { useParams, useNavigate} from 'react-router-dom';
+import { githubSVG, computerSVG, arrowR } from '../globals/globals';
 
 function PageIndividualProject({restBase, handleDisplayLoadingGIF, featuredImage}) {
     const { slug } = useParams();
-    const restPath = restBase + `posts?_embed&acf_format=standard&slug=${slug}&test=erer`;
+    const restPath = restBase + `posts?_embed&acf_format=standard&slug=${slug}&test=fgf`;
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
+    const navigate = useNavigate();
 
     // API call
     useEffect(() => {
@@ -41,12 +42,18 @@ function PageIndividualProject({restBase, handleDisplayLoadingGIF, featuredImage
             sizes="(max-width: ${imgWidth}) 100vw, ${imgWidth}px">`;
         return {__html: img}
     }
+
+    // Function to go back
+    const goBack = () => {
+        navigate(-1);
+    }
     
     return (
         <>
             {isLoaded &&
                 <>
                 <section className='project-landing-section'>
+                    <button className='back-link' onClick={goBack} >{arrowR} Back</button>
                     { restData.featured_media !== 0 && restData._embedded['wp:featuredmedia'][0] &&
                     <figure className="indvidual-proj-featured-image" dangerouslySetInnerHTML={featuredImage(restData._embedded['wp:featuredmedia'][0])}></figure>
                     }
