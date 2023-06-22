@@ -1,9 +1,14 @@
+/*--------------------  Landing Section -------------------- */
 .project-landing-section {
-    height: 90vh;
+    height: 85vh;
     min-height: 650px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    margin: -4vh 0rem 6rem;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr minmax(250px, clamp(250px, 45vw, 550px)) 1fr;
+    align-content: center;
     h2 {
         margin: 1rem 0rem 0rem;
         font-size: 2.3rem;
@@ -11,19 +16,21 @@
     }
 
     h3 {
-        margin: 0.5rem 0rem;
+        margin: 0rem;
         font-weight: 500;
-    }
-
-    figure {
-        margin-top: 1rem;
     }
 }
 
 .back-link {
-    margin-top: -6rem;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    align-self: end;
+    // margin-top: -6rem;
+    margin-bottom: 1rem;
     width: fit-content;
     padding: 0;
+    position: relative;
+    z-index: 500;
 
     &:hover {
         color: $black;
@@ -40,21 +47,44 @@
         transform: scaleX(-1);
         margin-top: -4px;
     }
+}
 
+.project-landing-content {
+    grid-column: 2/3;
+    align-items: start;
+    position: relative;
 }
 
 .indvidual-proj-featured-image {
-    margin: 2rem auto 0rem;
-    width: 250px;
+    margin: 0rem auto;
+    width: clamp(250px, 45vw, 550px);
+    height: fit-content;
     overflow: hidden;
     display: flex;
     justify-content: center;
     img {
-        width: 650px;
+        width: clamp(650px, 100vw, 1300px);
         height: auto;
     }
 }
 
+@media(min-width: 45.625em) {
+    .back-link {
+        grid-column: 1/2;
+        align-self: start;
+        justify-self: end;
+        margin-right: 1.5rem;
+    }
+
+    .project-titles {
+        position: absolute;
+        bottom: 5%;
+        left: -30%;
+        z-index: 50;
+    }
+}
+
+/*--------------------  Project Summary Section -------------------- */
 .proj-summary-section {
     margin-bottom: 10rem;
     h4 {
@@ -84,6 +114,7 @@
     }
 }
 
+/*--------------------  Gallery Section -------------------- */
 .project-gallery {
     figure {
         width: 250px;
@@ -97,6 +128,7 @@
     }
 }
 
+/*--------------------  Accordion Section -------------------- */
 .project-accordion {
     details {
         margin-bottom: 1rem;

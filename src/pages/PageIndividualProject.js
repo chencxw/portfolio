@@ -1,10 +1,12 @@
 import {useState, useEffect} from 'react';
 import { useParams, useNavigate} from 'react-router-dom';
 import { githubSVG, computerSVG, arrowR } from '../globals/globals';
+import "highlight.js/styles/base16/atelier-cave-light.css";
+import hljs from "highlight.js";
 
 function PageIndividualProject({restBase, handleDisplayLoadingGIF, featuredImage}) {
     const { slug } = useParams();
-    const restPath = restBase + `posts?_embed&acf_format=standard&slug=${slug}&test=fgf`;
+    const restPath = restBase + `posts?_embed&acf_format=standard&slug=${slug}&test=fgjnc`;
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
     const navigate = useNavigate();
@@ -47,6 +49,11 @@ function PageIndividualProject({restBase, handleDisplayLoadingGIF, featuredImage
     const goBack = () => {
         navigate(-1);
     }
+
+    // Run syntax highlighter
+    useEffect(() => {
+        hljs.highlightAll();
+    })
     
     return (
         <>
@@ -54,11 +61,15 @@ function PageIndividualProject({restBase, handleDisplayLoadingGIF, featuredImage
                 <>
                 <section className='project-landing-section'>
                     <button className='back-link' onClick={goBack} >{arrowR} Back</button>
-                    { restData.featured_media !== 0 && restData._embedded['wp:featuredmedia'][0] &&
-                    <figure className="indvidual-proj-featured-image" dangerouslySetInnerHTML={featuredImage(restData._embedded['wp:featuredmedia'][0])}></figure>
-                    }
-                    <h2>{restData.title.rendered}</h2>
-                    <h3>{restData.acf.project_subtitle}</h3>
+                    <div className="project-landing-content">
+                        { restData.featured_media !== 0 && restData._embedded['wp:featuredmedia'][0] &&
+                        <figure className="indvidual-proj-featured-image" dangerouslySetInnerHTML={featuredImage(restData._embedded['wp:featuredmedia'][0])}></figure>
+                        }
+                        <div className="project-titles">
+                            <h2>{restData.title.rendered}</h2>
+                            <h3>{restData.acf.project_subtitle}</h3>
+                        </div>
+                    </div>
                 </section>
                 <section className='proj-summary-section'>
                     <h4>Overview</h4>
@@ -82,8 +93,8 @@ function PageIndividualProject({restBase, handleDisplayLoadingGIF, featuredImage
                     )}
                 </section>
                 <section className='project-accordion'>
-                    <div dangerouslySetInnerHTML={{__html:restData.content.rendered}}>
-                    </div>
+                        <div dangerouslySetInnerHTML={{__html:restData.content.rendered}}>
+                        </div>
                 </section>
                 </>
             }

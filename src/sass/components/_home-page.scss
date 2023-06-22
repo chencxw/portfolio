@@ -1,4 +1,4 @@
-// Landing Section
+/*--------------------  Landing Section -------------------- */
 .landing-section {
     height: 85vh;
     display: flex;
@@ -46,7 +46,7 @@
 }
 
 
-// Featured Projects
+/*--------------------  Feauted Projects -------------------- */
 .all-projects-link {
     justify-self: center;
     grid-column: 1/-1;
@@ -116,7 +116,7 @@
 
 }
 
-// About section
+/*--------------------  About Section -------------------- */
 .about-section {
     min-height: 700px;
 }
@@ -171,7 +171,7 @@
     }
 }
 
-// Contact section
+/*--------------------  Contact Section -------------------- */
 .contact-section {
     height: 800px;
     display: flex;
