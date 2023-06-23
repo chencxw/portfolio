@@ -70,7 +70,7 @@ h2 {
 }
 
 h2 {
-    font-size: clamp(55px, 15vw, 80px);
+    font-size: clamp(3.44rem, 10vw + 1rem, 5rem);
 }
 
 h3 {
@@ -86,7 +86,7 @@ h4 {
 
 @media(min-width: 62.5em) {
     h2 {
-        font-size: clamp(80px, 8vw, 110px);
+        font-size: clamp(5rem, 6vw + 1rem, 6.875rem);
     }
     
 }

@@ -12,7 +12,7 @@
     position: relative;
     overflow: hidden;
     margin: 0rem 0rem;
-    font-size: clamp(51.2px, 15vw, 64px);
+    font-size: clamp(3.2rem, 10vw + 1rem, 4rem);
     color: $primary-color;
     font-family: 'Avenir';
     font-weight: 700;
@@ -40,7 +40,7 @@
         }
     }
     .letter {
-        font-size: clamp(64px, 8vw, 140px);
+        font-size: clamp(4rem, 5vw + 2rem, 8.75rem);
     }
     
 }
