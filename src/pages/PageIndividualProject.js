@@ -65,7 +65,7 @@ function PageIndividualProject({restBase, handleDisplayLoadingGIF, featuredImage
                         { restData.featured_media !== 0 && restData._embedded['wp:featuredmedia'][0] &&
                         <figure className="indvidual-proj-featured-image" dangerouslySetInnerHTML={featuredImage(restData._embedded['wp:featuredmedia'][0])}></figure>
                         }
-                        <div className="project-titles">
+                        <div className="project-page-titles">
                             <h2>{restData.title.rendered}</h2>
                             <h3>{restData.acf.project_subtitle}</h3>
                         </div>

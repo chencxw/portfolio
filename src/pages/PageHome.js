@@ -74,6 +74,7 @@ function PageHome({restBase, handleDisplayLoadingGIF, featuredImage}) {
                         <span className="letter">E</span>
                         <span className="letter">N</span>
                         <span className="letter">.</span>
+                        <span className='sr-only'>Crystal Chen</span>
                     </div>
                     <div className="job-title" >
                         <h2 dangerouslySetInnerHTML={{__html:restData.acf.job_title}}></h2>
