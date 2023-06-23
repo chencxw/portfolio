@@ -3,9 +3,6 @@
     height: 85vh;
     min-height: 650px;
     margin: -4vh 0rem 6rem;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
     display: grid;
     grid-template-columns: 1fr minmax(250px, clamp(250px, 45vw, 550px)) 1fr;
     align-content: center;
@@ -84,6 +81,28 @@
     }
 }
 
+@media(min-width: 53.125em) {
+    .project-landing-section {
+        h2{
+            font-size: 2.8rem;
+        }
+
+        h3{
+            font-size: 2rem;
+        }
+    }
+}
+
+@media(min-width: 81.25em) {
+    .project-landing-section {
+        margin-bottom: 12rem;
+
+        h2{
+            font-size: 3.7rem;
+        }
+    }
+}
+
 /*--------------------  Project Summary Section -------------------- */
 .proj-summary-section {
     margin-bottom: 10rem;
@@ -99,7 +118,7 @@
 
 .proj-details {
     h5 {
-        margin: 0rem 0rem 0.5rem;
+        margin: 0rem;
         font-size: 1.2rem;
     }
 
@@ -111,27 +130,63 @@
 .view-project-links {
     a {
         display: block;
+        width: fit-content;
     }
+}
+
+@media(min-width: 62.5em) {
+    .proj-summary-section {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 2rem;
+        margin-bottom: 15rem;
+    }
+
+    .overview-wrapper {
+        grid-column: 2/3;
+
+        h4 {
+            margin: 0rem;
+        }
+
+        p {
+            font-size: 1.3rem;
+            line-height: 2rem;
+        }
+    }
+
+    .proj-details {
+        grid-row: 1/2;
+    }
+
 }
 
 /*--------------------  Gallery Section -------------------- */
 .project-gallery {
     figure {
-        width: 250px;
+        width: clamp(250px, 100%, 1200px);
         overflow: hidden;
         display: flex;
-        margin: 0rem 0rem 5rem;
+        margin: 0rem auto 5rem;
         justify-content: center;
         img {
-            width: 350px;
+            width: clamp(350px, 100%, 1500px);
         }
+    }
+}
+
+@media (min-width: 50em) {
+    .project-gallery {
+        margin-bottom: 8rem;
     }
 }
 
 /*--------------------  Accordion Section -------------------- */
 .project-accordion {
+    margin-bottom: 3rem;
     details {
-        margin-bottom: 1rem;
+        margin: 0rem auto 1rem;
+        max-width: 900px;
 
         summary,
         summary::-webkit-details-marker {
@@ -187,3 +242,17 @@
         padding-bottom: 2rem;
     }
 }
+
+@media(min-width: 50em) {
+    .project-accordion {
+        margin-bottom: 8rem;
+        details {
+            margin-bottom: 3rem;
+            
+            summary {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+

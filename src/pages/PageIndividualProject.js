@@ -72,8 +72,10 @@ function PageIndividualProject({restBase, handleDisplayLoadingGIF, featuredImage
                     </div>
                 </section>
                 <section className='proj-summary-section'>
-                    <h4>Overview</h4>
-                    <div className='proj-overview' dangerouslySetInnerHTML={{__html:restData.acf.overview_content}}></div>
+                    <div className="overview-wrapper">
+                        <h4>Overview</h4>
+                        <div className='proj-overview' dangerouslySetInnerHTML={{__html:restData.acf.overview_content}}></div>
+                    </div>
                     <div className='proj-details'>
                         <h5>Toolkit</h5>
                         <p>{restData.acf.toolkit_list}</p>
