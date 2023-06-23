@@ -1,4 +1,4 @@
-// Landing Section
+/*--------------------  Landing Section -------------------- */
 .landing-section {
     height: 85vh;
     display: flex;
@@ -46,7 +46,7 @@
 }
 
 
-// Featured Projects
+/*--------------------  Feauted Projects -------------------- */
 .all-projects-link {
     justify-self: center;
     grid-column: 1/-1;
@@ -55,11 +55,9 @@
         vertical-align: middle;
         width: 30px;
         height: auto;
-        path {
-            stroke: $primary-color;
-            stroke-width: 1.5px;
-        }
+        fill: $primary-color;
     }
+
     @media (min-width: 43.75em) {
         font-size: 1.3rem;
     }
@@ -67,6 +65,9 @@
     @media(min-width: 53.125em) {
         &:hover {
             transform: scale(1.07);
+            svg {
+                fill: $primary-color;
+            }
         }
     }
 
@@ -115,7 +116,7 @@
 
 }
 
-// About section
+/*--------------------  About Section -------------------- */
 .about-section {
     min-height: 700px;
 }
@@ -170,7 +171,7 @@
     }
 }
 
-// Contact section
+/*--------------------  Contact Section -------------------- */
 .contact-section {
     height: 800px;
     display: flex;

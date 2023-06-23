@@ -20,8 +20,15 @@
         }
     }
 
-    article {
+    a {
         justify-self: center;
+        &:hover svg {
+            fill: $primary-color;
+        }
+    }
+
+    article {
+
         margin-bottom: 5rem;
         width: fit-content;
         &:hover {
@@ -40,6 +47,16 @@
 
 .project-titles {
     position: relative;
+}
+
+.project-subtitle {
+    width: 70%;
+}
+
+@media(min-width: 43.75em) {
+    .project-subtitle {
+        width: 100%;
+    }
 }
 
 .more-info-arrow {
@@ -86,6 +103,12 @@
             transform-origin: 100% 0%;
             transform: translateX(-2px) rotate(-30deg);
         }
+    }
+}
+
+@media(min-width: 53.125em) {
+    .project-grid a.all-projects-link {
+        justify-self: end;
     }
 }
 

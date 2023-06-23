@@ -1,12 +1,15 @@
 import {useState, useEffect} from 'react';
-import { useParams } from 'react-router-dom';
-import { githubSVG, computerSVG } from '../globals/globals';
+import { useParams, useNavigate} from 'react-router-dom';
+import { githubSVG, computerSVG, arrowR } from '../globals/globals';
+import "highlight.js/styles/base16/atelier-cave-light.css";
+import hljs from "highlight.js";
 
 function PageIndividualProject({restBase, handleDisplayLoadingGIF, featuredImage}) {
     const { slug } = useParams();
-    const restPath = restBase + `posts?_embed&acf_format=standard&slug=${slug}`;
+    const restPath = restBase + `posts?_embed&acf_format=standard&slug=${slug}&test=fgjnc`;
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
+    const navigate = useNavigate();
 
     // API call
     useEffect(() => {
@@ -26,26 +29,58 @@ function PageIndividualProject({restBase, handleDisplayLoadingGIF, featuredImage
             }
             fetchData()
     }, [restPath])
+
+    // Create img tag with proper srcset and sizes
+    const imageGallery = ( imageObject ) => {
+        let imgWidth = imageObject.media_details.sizes.full.width;
+        let imgHeight = imageObject.media_details.sizes.full.height;
+        let imgURL = imageObject.source_url;
+        let img = `<img src="${imgURL}" 
+            alt="${imageObject.alt_text}"
+            srcset="${imgURL} ${imgWidth}w,
+            ${imageObject.media_details.sizes.large ? imageObject.media_details.sizes.large.source_url + ' 1024w,' : ''}
+            ${imageObject.media_details.sizes.medium_large ? imageObject.media_details.sizes.medium_large.source_url + ' 768w,' : ''}
+            ${imageObject.media_details.sizes.medium ? imageObject.media_details.sizes.medium.source_url + ' 300w' : ''}"
+            sizes="(max-width: ${imgWidth}) 100vw, ${imgWidth}px">`;
+        return {__html: img}
+    }
+
+    // Function to go back
+    const goBack = () => {
+        navigate(-1);
+    }
+
+    // Run syntax highlighter
+    useEffect(() => {
+        hljs.highlightAll();
+    })
     
     return (
         <>
             {isLoaded &&
                 <>
                 <section className='project-landing-section'>
-                    <h2>{restData.title.rendered}</h2>
-                    <h3>{restData.acf.project_subtitle}</h3>
-                    { restData.featured_media !== 0 && restData._embedded['wp:featuredmedia'][0] &&
-                    <figure className="indvidual-proj-featured-image" dangerouslySetInnerHTML={featuredImage(restData._embedded['wp:featuredmedia'][0])}></figure>
-                }
+                    <button className='back-link' onClick={goBack} >{arrowR} Back</button>
+                    <div className="project-landing-content">
+                        { restData.featured_media !== 0 && restData._embedded['wp:featuredmedia'][0] &&
+                        <figure className="indvidual-proj-featured-image" dangerouslySetInnerHTML={featuredImage(restData._embedded['wp:featuredmedia'][0])}></figure>
+                        }
+                        <div className="project-titles">
+                            <h2>{restData.title.rendered}</h2>
+                            <h3>{restData.acf.project_subtitle}</h3>
+                        </div>
+                    </div>
                 </section>
-                <section>
-                    <h4>Overview</h4>
-                    <div className='proj-overview' dangerouslySetInnerHTML={{__html:restData.acf.overview_content}}></div>
+                <section className='proj-summary-section'>
+                    <div className="overview-wrapper">
+                        <h4>Overview</h4>
+                        <div className='proj-overview' dangerouslySetInnerHTML={{__html:restData.acf.overview_content}}></div>
+                    </div>
                     <div className='proj-details'>
                         <h5>Toolkit</h5>
-                        {restData.acf.toolkit_list}
+                        <p>{restData.acf.toolkit_list}</p>
                         <h5>Role</h5>
-                        {restData.acf.role_list}
+                        <p>{restData.acf.role_list}</p>
                         <h5>View Project</h5>
                         <div className='view-project-links'>
                             <a href={`${restData.acf.live_site_link}`}>{computerSVG} Live Site</a>
@@ -54,14 +89,14 @@ function PageIndividualProject({restBase, handleDisplayLoadingGIF, featuredImage
                     </div>
                 </section>
                 <section className='project-gallery'>
-                    {restData._embedded['acf:attachment'].map(object => 
-                        <figure className='gallery-img-container' dangerouslySetInnerHTML={featuredImage(object)}></figure>
+                    {restData._embedded['acf:attachment'] &&
+                        restData._embedded['acf:attachment'].map(object => 
+                            <figure dangerouslySetInnerHTML={imageGallery(object)} key={object.id}></figure>
                     )}
-
                 </section>
                 <section className='project-accordion'>
-                    <div dangerouslySetInnerHTML={{__html:restData.content.rendered}}>
-                    </div>
+                        <div dangerouslySetInnerHTML={{__html:restData.content.rendered}}>
+                        </div>
                 </section>
                 </>
             }

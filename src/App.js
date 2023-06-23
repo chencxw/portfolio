@@ -49,7 +49,7 @@ function App() {
           </Routes>
           <Sidebar restBase={restBase}/>
         </main>
-        <Footer />
+        {displayLoadingGIF === false && <Footer />}
       </div>
     </BrowserRouter>
 
