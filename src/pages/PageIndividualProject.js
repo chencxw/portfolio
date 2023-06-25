@@ -1,12 +1,13 @@
 import {useState, useEffect} from 'react';
 import { useParams, useNavigate} from 'react-router-dom';
 import { githubSVG, computerSVG, arrowR } from '../globals/globals';
-import "highlight.js/styles/base16/atelier-cave-light.css";
+import "highlight.js/styles/base16/edge-light.css";
 import hljs from "highlight.js";
+import SuggestedProjects from '../components/SuggestedProjects';
 
 function PageIndividualProject({restBase, handleDisplayLoadingGIF, featuredImage}) {
     const { slug } = useParams();
-    const restPath = restBase + `posts?_embed&acf_format=standard&slug=${slug}&test=fgjnc`;
+    const restPath = restBase + `posts?_embed&acf_format=standard&slug=${slug}`;
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
     const navigate = useNavigate();
@@ -54,6 +55,14 @@ function PageIndividualProject({restBase, handleDisplayLoadingGIF, featuredImage
     useEffect(() => {
         hljs.highlightAll();
     })
+
+    // Scroll to top when clicking onto page
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+        });
+    })
     
     return (
         <>
@@ -97,6 +106,10 @@ function PageIndividualProject({restBase, handleDisplayLoadingGIF, featuredImage
                 <section className='project-accordion'>
                         <div dangerouslySetInnerHTML={{__html:restData.content.rendered}}>
                         </div>
+                </section>
+                <section className="suggested-projects">
+                    <h4 className='title'>More Projects</h4>
+                    <SuggestedProjects restBase={restBase} featuredImage={featuredImage} />
                 </section>
                 </>
             }

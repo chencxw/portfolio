@@ -131,6 +131,11 @@
     a {
         display: block;
         width: fit-content;
+        margin-bottom: 0.8rem;
+    }
+
+    svg {
+        vertical-align: middle;
     }
 }
 
@@ -202,13 +207,35 @@
             margin-bottom: 2rem;
         }
 
+        h4 {
+            margin: 6rem 0rem 1rem;
+            color: $black;
+            &:first-of-type {
+                margin-top: -0.1rem;
+            }
+        }
+
         figure {
-            margin: 0rem 0rem 1.5rem;
+            margin: 0rem auto 1.5rem;
+            width: fit-content;
         }
 
         img {
-            width: 250px;
+            min-width: 250px;
+            width: 100%;
+            max-width: 600px;
             height: auto;
+        }
+    }
+
+    .wp-block-gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+
+        img {
+            min-width: 92px;
+            max-width: 292px;
         }
     }
 
@@ -252,7 +279,96 @@
             summary {
                 font-size: 1.5rem;
             }
+
+            h4 {
+                font-size: 1.6rem;
+                text-align: center;
+            }
         }
     }
 }
 
+/*--------------------  Suggest Projects Section -------------------- */
+.suggested-projects {
+    margin-bottom: 8rem;
+    .title {
+        font-size: 1.7rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    figure {
+        margin: 0rem;
+    }
+
+    .featured-image {
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        img {
+            width: auto;
+            height: 150px;
+            filter: grayscale(100%);
+        }
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    h4{
+        font-size: 1rem;
+    }
+
+    .more-info-arrow {
+        display: none;
+    }
+
+    article {
+        width: fit-content;
+        &:hover {
+            h3 {
+                color: $primary-color;
+            }
+            h4 {
+                color: $black;
+            }
+            .featured-image img {
+                filter: grayscale(0%);
+            }
+        }
+    }
+
+    a {
+        display: inline-block;
+        width: fit-content;
+    }
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    width: auto;
+}
+
+.swiper {
+    height: 250px;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: $primary-color;
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+}
+
+@media(min-width: 58.125em) {
+    .swiper-wrapper {
+        justify-content: center;
+    }
+}
