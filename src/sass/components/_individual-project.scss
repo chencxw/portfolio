@@ -283,7 +283,6 @@
             h4 {
                 font-size: 1.6rem;
                 text-align: center;
-                margin: 10rem 0rem 1rem;
             }
         }
     }
@@ -312,6 +311,7 @@
         img {
             width: auto;
             height: 150px;
+            filter: grayscale(100%);
         }
     }
 
@@ -329,6 +329,17 @@
 
     article {
         width: fit-content;
+        &:hover {
+            h3 {
+                color: $primary-color;
+            }
+            h4 {
+                color: $black;
+            }
+            .featured-image img {
+                filter: grayscale(0%);
+            }
+        }
     }
 
     a {

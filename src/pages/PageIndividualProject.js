@@ -55,6 +55,14 @@ function PageIndividualProject({restBase, handleDisplayLoadingGIF, featuredImage
     useEffect(() => {
         hljs.highlightAll();
     })
+
+    // Scroll to top when clicking onto page
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+        });
+    })
     
     return (
         <>
