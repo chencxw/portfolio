@@ -7,7 +7,6 @@ function AllProjectsPage({restBase, handleDisplayLoadingGIF, featuredImage}) {
     const [restDataProj, setDataProj] = useState([]);
     const [restDataPersonalProj, setDataPersonalProj] = useState([]);
     const [isLoadedProj, setProjLoadStatus] = useState(false);
-    const [isLoadedPersonalProj, setPersonalProjLoadStatus] = useState(false);
 
     // API call
     useEffect(() => {
@@ -21,13 +20,11 @@ function AllProjectsPage({restBase, handleDisplayLoadingGIF, featuredImage}) {
                     setDataProj(dataProj)
                     setDataPersonalProj(dataPersonalProj)
                     setProjLoadStatus(true)
-                    setPersonalProjLoadStatus(true)
                     setTimeout(() => {
                         handleDisplayLoadingGIF(false);
                     }, 1000)
                 } else {
                     setProjLoadStatus(false)
-                    setPersonalProjLoadStatus(false)
                 }
             }
             fetchData()
@@ -36,7 +33,7 @@ function AllProjectsPage({restBase, handleDisplayLoadingGIF, featuredImage}) {
     
     return (
         <>
-        {isLoadedProj && isLoadedPersonalProj &&
+        {isLoadedProj && 
             <section className='all-projects project-grid'>
             <h2>All Projects.</h2>
             <ProjectGrid data={restDataProj} featuredImage={featuredImage}/>

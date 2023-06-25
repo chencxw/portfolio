@@ -281,7 +281,7 @@
             }
 
             h4 {
-                font-size: 1.4rem;
+                font-size: 1.6rem;
                 text-align: center;
                 margin: 10rem 0rem 1rem;
             }
@@ -289,3 +289,75 @@
     }
 }
 
+/*--------------------  Suggest Projects Section -------------------- */
+.suggested-projects {
+    margin-bottom: 8rem;
+    .title {
+        font-size: 1.7rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    figure {
+        margin: 0rem;
+    }
+
+    .featured-image {
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        img {
+            width: auto;
+            height: 150px;
+        }
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    h4{
+        font-size: 1rem;
+    }
+
+    .more-info-arrow {
+        display: none;
+    }
+
+    article {
+        width: fit-content;
+    }
+
+    a {
+        display: inline-block;
+        width: fit-content;
+    }
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    width: auto;
+}
+
+.swiper {
+    height: 250px;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: $primary-color;
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+}
+
+@media(min-width: 58.125em) {
+    .swiper-wrapper {
+        justify-content: center;
+    }
+}

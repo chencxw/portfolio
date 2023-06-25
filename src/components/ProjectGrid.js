@@ -19,7 +19,7 @@ function ProjectGrid({data, featuredImage}) {
                 </div>
             </article>
             </Link>
-            )}
+        )}
         </>
     )
 }
