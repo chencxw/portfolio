@@ -6,7 +6,7 @@ import hljs from "highlight.js";
 
 function PageIndividualProject({restBase, handleDisplayLoadingGIF, featuredImage}) {
     const { slug } = useParams();
-    const restPath = restBase + `posts?_embed&acf_format=standard&slug=${slug}&test=fgjnc`;
+    const restPath = restBase + `posts?_embed&acf_format=standard&slug=${slug}&test=ljdd`;
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
     const navigate = useNavigate();

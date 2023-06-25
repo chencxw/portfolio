@@ -131,6 +131,11 @@
     a {
         display: block;
         width: fit-content;
+        margin-bottom: 0.8rem;
+    }
+
+    svg {
+        vertical-align: middle;
     }
 }
 
@@ -202,13 +207,35 @@
             margin-bottom: 2rem;
         }
 
+        h4 {
+            margin: 6rem 0rem 1rem;
+            color: $black;
+            &:first-of-type {
+                margin-top: -0.1rem;
+            }
+        }
+
         figure {
-            margin: 0rem 0rem 1.5rem;
+            margin: 0rem auto 1.5rem;
+            width: fit-content;
         }
 
         img {
-            width: 250px;
+            min-width: 250px;
+            width: 100%;
+            max-width: 600px;
             height: auto;
+        }
+    }
+
+    .wp-block-gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+
+        img {
+            min-width: 92px;
+            max-width: 292px;
         }
     }
 
@@ -251,6 +278,12 @@
             
             summary {
                 font-size: 1.5rem;
+            }
+
+            h4 {
+                font-size: 1.4rem;
+                text-align: center;
+                margin: 10rem 0rem 1rem;
             }
         }
     }
