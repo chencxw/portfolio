@@ -79,6 +79,15 @@
         left: -30%;
         z-index: 50;
     }
+
+    .back-link {
+        &:hover {
+            transform: scale(1.07);
+            svg {
+                fill: $primary-color;
+            }
+        }
+    }
 }
 
 @media(min-width: 53.125em) {
