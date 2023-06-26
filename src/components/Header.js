@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useRef } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import {HashLink} from 'react-router-hash-link';
 import logoGIF from '../images/logo.gif';
@@ -8,6 +8,7 @@ function Header({restBase, displayLoadingGIF}) {
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
     const [navOpen, setNavOpen] = useState(false);
+    const siteMenu = useRef(null);
 
     // API call
     useEffect(() => {
@@ -33,10 +34,21 @@ function Header({restBase, displayLoadingGIF}) {
         showHideNav();
     }
 
+    function outsideNavMenu(e) {
+        if( !siteMenu.current.contains(e.target) ) {
+            setNavOpen(false);
+        }
+    }
+
+    useEffect(() => {
+        document.addEventListener('click', outsideNavMenu)
+    }, []);
+
+
     return (
         <>
         {isLoaded && 
-            <header className={ navOpen ? 'site-header show' : 'site-header'}>
+            <header className={ navOpen ? 'site-header show' : 'site-header'} ref={siteMenu}>
                 <Link className="logo" to="/" >
                     {displayLoadingGIF ? <img src={logoGIF} alt="Loading Logo" /> : <img src={`${restData.acf.logo}`} alt="logo" />}
                 </Link>
