@@ -49,7 +49,7 @@ function Contact({restData, matchesDesktop}) {
         }else {
             contactTL.fromTo(underlineElement, {width: 0}, {width: 100, duration: 0.7, delay: 0.4});
         }
-        contactTL.to(buttonElement, {scale: 1.08, delay: 0.5});
+        contactTL.to(buttonElement, {scale: 1.08, delay: 0.2});
         contactTL.to(buttonElement, {rotate: -3});
         contactTL.to(buttonElement, {rotate: 3});
         contactTL.to(buttonElement, {rotate: -3});

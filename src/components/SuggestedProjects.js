@@ -29,7 +29,7 @@ function SuggestedProjects({restBase, featuredImage}) {
         <>
             {isProjDataLoaded &&
                 <Swiper 
-                    modules={[Pagination]}
+                    modules={[Pagination]} 
                     pagination={{clickable: true}}
                     slidesPerView={1} 
                     spaceBetween={20} 
