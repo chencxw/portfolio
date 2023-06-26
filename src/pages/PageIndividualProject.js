@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import { useParams, useNavigate} from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { githubSVG, computerSVG, arrowR } from '../globals/globals';
 import "highlight.js/styles/base16/edge-light.css";
 import hljs from "highlight.js";
@@ -69,7 +69,7 @@ function PageIndividualProject({restBase, handleDisplayLoadingGIF, featuredImage
             {isLoaded &&
                 <>
                 <section className='project-landing-section'>
-                    <button className='back-link' onClick={goBack} >{arrowR} Back</button>
+                    <Link to={'/all-projects'} className='back-link'>{arrowR} Back</Link>
                     <div className="project-landing-content">
                         { restData.featured_media !== 0 && restData._embedded['wp:featuredmedia'][0] &&
                         <figure className="indvidual-proj-featured-image" dangerouslySetInnerHTML={featuredImage(restData._embedded['wp:featuredmedia'][0])}></figure>
