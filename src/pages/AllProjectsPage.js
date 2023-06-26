@@ -30,7 +30,11 @@ function AllProjectsPage({restBase, handleDisplayLoadingGIF, featuredImage}) {
             fetchData()
     }, [restPathProj, restPathPersonalProj])
     
-    
+    // Changing the document title
+    useEffect(() => {
+        document.title = 'Crystal Chen | All Projects'
+    }, []);
+
     return (
         <>
         {isLoadedProj && 

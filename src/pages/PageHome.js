@@ -55,6 +55,11 @@ function PageHome({restBase, handleDisplayLoadingGIF, featuredImage}) {
         return () => mediaQuery2.removeEventListener('change', checkDesktop);
     })
 
+    // Changing the document title
+    useEffect(() => {
+        document.title = 'Crystal Chen'
+    }, []);
+
     return (
         <>
             {isLoaded ?
