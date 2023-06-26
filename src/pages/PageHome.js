@@ -3,6 +3,7 @@ import Loading from '../components/Loading';
 import FeaturedProjects from '../components/FeaturedProjects';
 import About from '../components/About';
 import Contact from '../components/Contact';
+import "aos/dist/aos.css"
 
 function PageHome({restBase, handleDisplayLoadingGIF, featuredImage}) {
     const restPath = restBase + 'pages/6?acf_format=standard';
@@ -85,7 +86,7 @@ function PageHome({restBase, handleDisplayLoadingGIF, featuredImage}) {
                         <h2 dangerouslySetInnerHTML={{__html:restData.acf.job_title}}></h2>
                     </div>
                 </section>
-                <FeaturedProjects restBase={restBase} featuredImage={featuredImage}/>
+                <FeaturedProjects restBase={restBase} featuredImage={featuredImage} matches={matches}/>
                 <About restData={restData} />
                 <Contact restData={restData} matchesDesktop={matchesDesktop}/>
                 </>

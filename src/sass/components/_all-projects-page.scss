@@ -16,6 +16,11 @@
             width: clamp(250px, 30vw, 350px);
             height: clamp(250px, 30vw, 350px);
         }
+
+        h4 {
+            display: inline-block;
+            width: 78%;
+        }
     }
 }
 
@@ -28,5 +33,11 @@
             width: clamp(250px, 24vw, 450px);
             height: clamp(250px, 24vw, 450px);
         }
+    }
+}
+
+@media(min-width: 106.25em) {
+    .all-projects h4 {
+        width: 90%;
     }
 }

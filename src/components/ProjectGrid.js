@@ -1,11 +1,17 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import AOS from "aos";
 
 function ProjectGrid({data, featuredImage}) {
+    // Initialize AOS
+    useEffect(() => {
+        AOS.init();
+    }, []);
 
     return (
         <>
         {data.map(project => 
-            <Link to={`/${project.slug}`} key={project.id}>
+            <Link to={`/${project.slug}`} key={project.id}  data-aos='fade-up'>
             <article id={`project-${project.id}`}>
                 { project.featured_media !== 0 && project._embedded['wp:featuredmedia'][0] &&
                     <figure className="featured-image" dangerouslySetInnerHTML={featuredImage(project._embedded['wp:featuredmedia'][0])}></figure>

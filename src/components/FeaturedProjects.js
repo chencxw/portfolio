@@ -2,8 +2,9 @@ import {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { arrowR } from '../globals/globals';
 import ProjectGrid from './ProjectGrid';
+import AOS from "aos";
 
-function FeaturedProjects({restBase, featuredImage}) {
+function FeaturedProjects({restBase, featuredImage, matches}) {
     const restPathProjects = restBase + 'posts?_embed&tags=4';
     const [restDataProjects, setDataProjects] = useState([]);
     const [isLoadedProjects, setProjectLoadStatus] = useState(false);
@@ -23,13 +24,18 @@ function FeaturedProjects({restBase, featuredImage}) {
     fetchData()
     }, [restPathProjects])
 
+    // Initialize AOS
+    useEffect(() => {
+        AOS.init();
+    }, []);
+
     return (   
     <>
     { isLoadedProjects && 
         <section className='featured-projects project-grid'>
-            <h2>Projects.</h2>
+            <h2 data-aos='fade-right'>Projects.</h2>
             <ProjectGrid data={restDataProjects} featuredImage={featuredImage}/>
-            <Link to={'/all-projects'} className='all-projects-link'>See All Projects<span className='arrow-span'>{arrowR}</span></Link>
+            <Link to={'/all-projects'} className='all-projects-link' data-aos={matches ? 'fade-right' : ''} data-aos-delay='300'>See All Projects<span className='arrow-span'>{arrowR}</span></Link>
         </section>
     }
     </>
