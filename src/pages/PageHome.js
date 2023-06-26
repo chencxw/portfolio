@@ -22,7 +22,9 @@ function PageHome({restBase, handleDisplayLoadingGIF, featuredImage}) {
             if ( response.ok ) {
                 const data = await response.json()
                 setData(data)
-                setLoadStatus(true)
+                setTimeout(() => {
+                    setLoadStatus(true)
+                }, 500);
             } else {
                 setLoadStatus(false)
             }
