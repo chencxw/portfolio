@@ -187,10 +187,11 @@
             width: fit-content;
         }
 
+        video,
         img {
             min-width: 250px;
             width: 100%;
-            max-width: 600px;
+            max-width: 800px;
             height: auto;
         }
     }
