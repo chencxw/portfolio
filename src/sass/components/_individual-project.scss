@@ -18,33 +18,6 @@
     }
 }
 
-.back-link {
-    grid-column: 2/3;
-    grid-row: 1/2;
-    align-self: end;
-    margin-bottom: 1rem;
-    width: fit-content;
-    padding: 0;
-    position: relative;
-    z-index: 500;
-
-    &:hover {
-        color: $black;
-        svg {
-            fill: $primary-color;
-        }
-    }
-
-    svg {
-        width: 30px;
-        height: auto;
-        vertical-align: middle;
-        fill: $primary-color;
-        transform: scaleX(-1);
-        margin-top: -4px;
-    }
-}
-
 .project-landing-content {
     grid-column: 2/3;
     align-items: start;
@@ -66,13 +39,6 @@
 }
 
 @media(min-width: 45.625em) {
-    .back-link {
-        grid-column: 1/2;
-        align-self: start;
-        justify-self: end;
-        margin-right: 1.5rem;
-    }
-
     .project-page-titles {
         position: absolute;
         bottom: 10%;
@@ -80,14 +46,6 @@
         z-index: 50;
     }
 
-    .back-link {
-        &:hover {
-            transform: scale(1.07);
-            svg {
-                fill: $primary-color;
-            }
-        }
-    }
 }
 
 @media(min-width: 53.125em) {
