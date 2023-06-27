@@ -8,7 +8,7 @@ import AOS from "aos";
 
 function PageIndividualProject({restBase, handleDisplayLoadingGIF, featuredImage}) {
     const { slug } = useParams();
-    const restPath = restBase + `posts?_embed&acf_format=standard&slug=${slug}`;
+    const restPath = restBase + `posts?_embed&acf_format=standard&slug=${slug}&test=fttf`;
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
 
@@ -49,14 +49,6 @@ function PageIndividualProject({restBase, handleDisplayLoadingGIF, featuredImage
     // Run syntax highlighter
     useEffect(() => {
         hljs.highlightAll();
-    })
-
-    // Scroll to top when clicking onto page
-    useEffect(() => {
-        window.scrollTo({
-            top: 0,
-            left: 0,
-        });
     })
 
     // Changing the document title
