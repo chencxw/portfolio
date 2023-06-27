@@ -76,7 +76,6 @@ function PageIndividualProject({restBase, handleDisplayLoadingGIF, featuredImage
             {isLoaded &&
                 <>
                 <section className='project-landing-section' data-aos='fade-up'  data-aos-delay='300' data-aos-duration='1000'>
-                    {/* <Link to={'/all-projects'} className='back-link'>{arrowR} Back</Link> */}
                     <div className="project-landing-content">
                         { restData.featured_media !== 0 && restData._embedded['wp:featuredmedia'][0] &&
                         <figure className="indvidual-proj-featured-image" dangerouslySetInnerHTML={featuredImage(restData._embedded['wp:featuredmedia'][0])}></figure>
