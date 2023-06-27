@@ -33,9 +33,9 @@ function FeaturedProjects({restBase, featuredImage, matches}) {
     <>
     { isLoadedProjects && 
         <section className='featured-projects project-grid'>
-            <h2 data-aos='fade-right'>Projects.</h2>
+            <h2 data-aos='fade-right' data-aos-duration='800'>Projects.</h2>
             <ProjectGrid data={restDataProjects} featuredImage={featuredImage}/>
-            <Link to={'/all-projects'} className='all-projects-link' data-aos={matches ? 'fade-right' : ''} data-aos-delay='300'>See All Projects<span className='arrow-span'>{arrowR}</span></Link>
+            <Link to={'/all-projects'} className='all-projects-link' data-aos={matches ? 'fade-right' : ''} data-aos-delay='300' data-aos-duration='800'>See All Projects<span className='arrow-span'>{arrowR}</span></Link>
         </section>
     }
     </>
