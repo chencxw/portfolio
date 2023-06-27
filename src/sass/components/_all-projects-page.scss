@@ -1,15 +1,17 @@
 .all-projects {
-    &.project-grid {
-        margin-bottom: 5rem;
-    }
-
     h2 {
         margin-top: 2rem;
     }
 }
 
+.all-projects-grid {
+    &.project-grid {
+        margin-bottom: 5rem;
+    }
+}
+
 @media(min-width: 53.125em) {
-    .all-projects {
+    .all-projects-grid {
         grid-template-columns: repeat(2, 1fr);
 
         .featured-image {
@@ -25,7 +27,7 @@
 }
 
 @media(min-width: 81.25em) {
-    .all-projects {
+    .all-projects-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 0rem 1.5rem;
 
@@ -37,7 +39,7 @@
 }
 
 @media(min-width: 106.25em) {
-    .all-projects h4 {
+    .all-projects-grid h4 {
         width: 90%;
     }
 }

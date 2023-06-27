@@ -38,10 +38,12 @@ function AllProjectsPage({restBase, handleDisplayLoadingGIF, featuredImage}) {
     return (
         <>
         {isLoadedProj && 
-            <section className='all-projects project-grid'>
+            <section className='all-projects'>
             <h2>All Projects.</h2>
-            <ProjectGrid data={restDataProj} featuredImage={featuredImage}/>
-            <ProjectGrid data={restDataPersonalProj} featuredImage={featuredImage}/>
+            <div className='all-projects-grid project-grid' data-aos='fade-up' data-aos-delay='300' data-aos-duration='1000'>
+                <ProjectGrid data={restDataProj} featuredImage={featuredImage}/>
+                <ProjectGrid data={restDataPersonalProj} featuredImage={featuredImage}/>
+            </div>
             </section>
         }
         </>
