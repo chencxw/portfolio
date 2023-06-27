@@ -1,8 +1,8 @@
-import {useState, useEffect, useContext} from 'react';
+import {useState, useEffect } from 'react';
 import ProjectGrid from '../components/ProjectGrid';
 
 function AllProjectsPage({restBase, handleDisplayLoadingGIF, featuredImage}) {
-    const restPathProj = restBase + 'posts?_embed&categories=3&order=asc&';
+    const restPathProj = restBase + 'posts?_embed&categories=3&order=asc&test=skdklsd';
     const restPathPersonalProj = restBase + 'posts?_embed&categories=5';
     const [restDataProj, setDataProj] = useState([]);
     const [restDataPersonalProj, setDataPersonalProj] = useState([]);
@@ -30,14 +30,20 @@ function AllProjectsPage({restBase, handleDisplayLoadingGIF, featuredImage}) {
             fetchData()
     }, [restPathProj, restPathPersonalProj])
     
-    
+    // Changing the document title
+    useEffect(() => {
+        document.title = 'Crystal Chen | All Projects'
+    }, []);
+
     return (
         <>
         {isLoadedProj && 
-            <section className='all-projects project-grid'>
+            <section className='all-projects'>
             <h2>All Projects.</h2>
-            <ProjectGrid data={restDataProj} featuredImage={featuredImage}/>
-            <ProjectGrid data={restDataPersonalProj} featuredImage={featuredImage}/>
+            <div className='all-projects-grid project-grid' data-aos='fade-up' data-aos-duration='1000' data-aos-delay='200'>
+                <ProjectGrid data={restDataProj} featuredImage={featuredImage}/>
+                <ProjectGrid data={restDataPersonalProj} featuredImage={featuredImage}/>
+            </div>
             </section>
         }
         </>

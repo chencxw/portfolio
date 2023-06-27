@@ -1,26 +1,33 @@
 .all-projects {
-    &.project-grid {
-        margin-bottom: 5rem;
-    }
-
     h2 {
         margin-top: 2rem;
     }
 }
 
+.all-projects-grid {
+    &.project-grid {
+        margin-bottom: 5rem;
+    }
+}
+
 @media(min-width: 53.125em) {
-    .all-projects {
+    .all-projects-grid {
         grid-template-columns: repeat(2, 1fr);
 
         .featured-image {
             width: clamp(250px, 30vw, 350px);
             height: clamp(250px, 30vw, 350px);
         }
+
+        h4 {
+            display: inline-block;
+            width: 78%;
+        }
     }
 }
 
 @media(min-width: 81.25em) {
-    .all-projects {
+    .all-projects-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 0rem 1.5rem;
 
@@ -28,5 +35,11 @@
             width: clamp(250px, 24vw, 450px);
             height: clamp(250px, 24vw, 450px);
         }
+    }
+}
+
+@media(min-width: 106.25em) {
+    .all-projects-grid h4 {
+        width: 90%;
     }
 }

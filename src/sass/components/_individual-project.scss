@@ -2,7 +2,7 @@
 .project-landing-section {
     height: 85vh;
     min-height: 650px;
-    margin: -4vh 0rem 6rem;
+    margin-bottom: 6rem;
     display: grid;
     grid-template-columns: 1fr minmax(250px, clamp(250px, 45vw, 550px)) 1fr;
     align-content: center;
@@ -22,7 +22,6 @@
     grid-column: 2/3;
     grid-row: 1/2;
     align-self: end;
-    // margin-top: -6rem;
     margin-bottom: 1rem;
     width: fit-content;
     padding: 0;
@@ -50,6 +49,7 @@
     grid-column: 2/3;
     align-items: start;
     position: relative;
+    margin-top: -4rem;
 }
 
 .indvidual-proj-featured-image {

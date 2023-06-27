@@ -42,8 +42,8 @@ function SuggestedProjects({restBase, featuredImage}) {
                     }}
                 >
                     {moreProjData.map(project => 
-                        <SwiperSlide>
-                            <Link to={`/${project.slug}`} key={project.id}>
+                        <SwiperSlide key={project.id}>
+                            <Link to={`/${project.slug}`} key={project.id} reloadDocument>
                             <article id={`project-${project.id}`}>
                                 { project.featured_media !== 0 && project._embedded['wp:featuredmedia'][0] &&
                                     <figure className="featured-image" dangerouslySetInnerHTML={featuredImage(project._embedded['wp:featuredmedia'][0])}></figure>

@@ -53,10 +53,12 @@
 
 
 /*--------------------  Feauted Projects -------------------- */
-.all-projects-link {
+.projects-link-wrapper {
     justify-self: center;
     grid-column: 1/-1;
+}
 
+.all-projects-link {
     svg {
         vertical-align: middle;
         width: 30px;
@@ -70,7 +72,7 @@
 
     @media(min-width: 53.125em) {
         &:hover {
-            transform: scale(1.07);
+            transform: scale(1.1);
             svg {
                 fill: $primary-color;
             }
@@ -112,12 +114,21 @@
         }
     }
 
-    .all-projects-link {
+    .projects-link-wrapper {
         grid-column: 2/3;
         grid-row: 1/2;
         align-self: end;
         margin-bottom: 4rem;
         justify-self: end;
+        &:hover {
+            .all-projects-link {
+                display: inline-block;
+                transform: scale(1.07);
+                svg {
+                    fill: $primary-color;
+                }
+            }
+        }
     }
 
 }

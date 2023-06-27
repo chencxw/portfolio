@@ -1,16 +1,16 @@
 import {useState, useEffect} from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { githubSVG, computerSVG, arrowR } from '../globals/globals';
 import "highlight.js/styles/base16/edge-light.css";
 import hljs from "highlight.js";
 import SuggestedProjects from '../components/SuggestedProjects';
+import AOS from "aos";
 
 function PageIndividualProject({restBase, handleDisplayLoadingGIF, featuredImage}) {
     const { slug } = useParams();
     const restPath = restBase + `posts?_embed&acf_format=standard&slug=${slug}`;
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
-    const navigate = useNavigate();
 
     // API call
     useEffect(() => {
@@ -46,11 +46,6 @@ function PageIndividualProject({restBase, handleDisplayLoadingGIF, featuredImage
         return {__html: img}
     }
 
-    // Function to go back
-    const goBack = () => {
-        navigate(-1);
-    }
-
     // Run syntax highlighter
     useEffect(() => {
         hljs.highlightAll();
@@ -63,13 +58,25 @@ function PageIndividualProject({restBase, handleDisplayLoadingGIF, featuredImage
             left: 0,
         });
     })
+
+    // Changing the document title
+    useEffect(() => {
+        if( isLoaded === true ) {
+            document.title = `Crystal Chen | ${restData.title.rendered}`;
+        };
+    });
+
+    // Initialize AOS
+    useEffect(() => {
+        AOS.init();
+    }, []);
     
     return (
         <>
             {isLoaded &&
                 <>
-                <section className='project-landing-section'>
-                    <Link to={'/all-projects'} className='back-link'>{arrowR} Back</Link>
+                <section className='project-landing-section' data-aos='fade-up'  data-aos-delay='300' data-aos-duration='1000'>
+                    {/* <Link to={'/all-projects'} className='back-link'>{arrowR} Back</Link> */}
                     <div className="project-landing-content">
                         { restData.featured_media !== 0 && restData._embedded['wp:featuredmedia'][0] &&
                         <figure className="indvidual-proj-featured-image" dangerouslySetInnerHTML={featuredImage(restData._embedded['wp:featuredmedia'][0])}></figure>
