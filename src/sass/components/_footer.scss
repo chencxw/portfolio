@@ -6,8 +6,24 @@
     }
 }
 
+.footer-nav {
+    a {
+        margin-right: 1rem;
+    }
+}
+
+.hide-footer-nav {
+    display: none;
+}
+
 @media(min-width: 31.25em) {
     .site-footer {
         font-size: 1rem;
+    }
+}
+
+@media(min-width: 50em) {
+    .footer-nav {
+        display: none;
     }
 }
