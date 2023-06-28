@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 function SuggestedProjects({restBase, featuredImage}) {
-    const moreProjPath = restBase + 'posts?_embed&per_page=4&order=asc';
+    const moreProjPath = restBase + 'posts?_embed&per_page=4&order=asc&test=kdfn';
     const [moreProjData, setMoreProjData] = useState([]);
     const [isProjDataLoaded, setProjDataStatus] = useState(false);
 
