@@ -2,8 +2,8 @@ import {useState, useEffect } from 'react';
 import ProjectGrid from '../components/ProjectGrid';
 
 function AllProjectsPage({restBase, handleDisplayLoadingGIF, featuredImage}) {
-    const restPathProj = restBase + 'posts?_embed&categories=3&order=asc&test=skdklsd';
-    const restPathPersonalProj = restBase + 'posts?_embed&categories=5';
+    const restPathProj = restBase + 'posts?_embed&categories=3&order=asc';
+    const restPathPersonalProj = restBase + 'posts?_embed&categories=5&test=skjdnf';
     const [restDataProj, setDataProj] = useState([]);
     const [restDataPersonalProj, setDataPersonalProj] = useState([]);
     const [isLoadedProj, setProjLoadStatus] = useState(false);
