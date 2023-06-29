@@ -7,6 +7,7 @@ function SocialmediaBtns() {
     const restPath = restBase + 'pages/6?acf_format=standard&test=test';
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
+    const [showMessage, setShowMessage] = useState(false);
 
     // API call
     useEffect(() => {
@@ -23,11 +24,23 @@ function SocialmediaBtns() {
         fetchData()
     }, [restPath])
 
+    // Function to copy email
+    function handleCopyText() {
+        navigator.clipboard.writeText(restData.acf.contact_email);
+        setShowMessage(true);
+        setTimeout(() => {
+            setShowMessage(false);
+        }, 800)
+    }
+
     return (
     <>  
         {isLoaded && 
             <>
-            <a href={`${restData.acf.contact_email}`}>{mailSVG}</a>
+            <div className='email-btn tooltip'>
+                <span className={showMessage ? "tooltipText show" : "tooltipText"}>Copied!</span>
+                <a onClick={handleCopyText} >{mailSVG}</a>
+            </div>
             <a href={`${restData.acf.github_link}`}>{githubSVG}</a>
             <a href={`${restData.acf.linkedin_link}`}>{linkedinSVG}</a>
             </>

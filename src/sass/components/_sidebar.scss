@@ -14,6 +14,21 @@
     height: 150px;
 }
 
+.email-btn {
+    display: inline;
+    & .tooltipText {
+        width: 70px;
+        margin-left: -42px;
+        bottom: 3.5rem;
+    }
+    @media(min-width:50em) {
+        & .tooltipText {
+            margin-left: -35px;
+            bottom: 150%;
+        }
+    }
+}
+
 @media(min-width:50em) {
     .sidebar {
         display: flex;
