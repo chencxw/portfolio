@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { githubSVG, computerSVG, arrowR } from '../globals/globals';
+import { useParams } from 'react-router-dom';
+import { githubSVG, computerSVG } from '../globals/globals';
 import "highlight.js/styles/base16/edge-light.css";
 import hljs from "highlight.js";
 import SuggestedProjects from '../components/SuggestedProjects';
