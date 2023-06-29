@@ -44,21 +44,20 @@ function App() {
   return (
     <BrowserRouter>
       <RestBaseContext.Provider value={restBase}>
-      <div className='site' id='home'>
-        <Header restBase={restBase} displayLoadingGIF={displayLoadingGIF}/>
-        <main>
-          <Routes>
-            <Route path="/" exact element={<PageHome restBase={restBase} handleDisplayLoadingGIF={handleDisplayLoadingGIF} featuredImage={featuredImage} />}/>
-            <Route path="/all-projects" element={<AllProjectsPage restBase={restBase} handleDisplayLoadingGIF={handleDisplayLoadingGIF} featuredImage={featuredImage} />}/>
-            <Route path="/:slug" element={<PageIndividualProject restBase={restBase} handleDisplayLoadingGIF={handleDisplayLoadingGIF} featuredImage={featuredImage} />}/>
-          </Routes>
-          <Sidebar />
-        </main>
-        {displayLoadingGIF === false && <Footer />}
-      </div>
-    </RestBaseContext.Provider>
+        <div className='site' id='home'>
+          <Header restBase={restBase} displayLoadingGIF={displayLoadingGIF}/>
+          <main>
+            <Routes>
+              <Route path="/" exact element={<PageHome restBase={restBase} handleDisplayLoadingGIF={handleDisplayLoadingGIF} featuredImage={featuredImage} />}/>
+              <Route path="/all-projects" element={<AllProjectsPage restBase={restBase} handleDisplayLoadingGIF={handleDisplayLoadingGIF} featuredImage={featuredImage} />}/>
+              <Route path="/:slug" element={<PageIndividualProject restBase={restBase} handleDisplayLoadingGIF={handleDisplayLoadingGIF} featuredImage={featuredImage} />}/>
+            </Routes>
+            <Sidebar />
+          </main>
+          {displayLoadingGIF === false && <Footer />}
+        </div>
+      </RestBaseContext.Provider>
     </BrowserRouter>
-
   );
 }
 
