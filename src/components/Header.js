@@ -1,4 +1,4 @@
-import {useState, useEffect, useRef } from 'react';
+import {useState, useEffect, useRef} from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import {HashLink} from 'react-router-hash-link';
 import logoGIF from '../images/logo.gif';

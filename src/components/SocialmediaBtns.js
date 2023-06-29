@@ -1,7 +1,9 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useContext} from 'react';
 import { githubSVG, linkedinSVG, mailSVG } from '../globals/globals';
+import { RestBaseContext } from '../App';
 
-function SocialmediaBtns({restBase}) {
+function SocialmediaBtns() {
+    const restBase = useContext(RestBaseContext);
     const restPath = restBase + 'pages/6?acf_format=standard&test=test';
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
