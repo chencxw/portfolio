@@ -1,6 +1,6 @@
 // Development Components
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, createContext } from 'react';
 
 // Components
 import Header from './components/Header';
@@ -12,10 +12,14 @@ import PageHome from './pages/PageHome';
 import AllProjectsPage from './pages/AllProjectsPage';
 import PageIndividualProject from './pages/PageIndividualProject';
 
+// Create context for restBase path
+export const RestBaseContext = createContext();
+
 function App() {
   const restBase = 'https://crystalchen.ca/wp-portfolio/wp-json/wp/v2/'
   const [displayLoadingGIF, setDisplayLoadingGIF] = useState(true);
   
+  // Function to output responsive images
   const featuredImage = ( featuredImageObject ) => {
     let imgWidth = featuredImageObject.media_details.sizes.full.width;
     let imgHeight = featuredImageObject.media_details.sizes.full.height;
@@ -39,6 +43,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <RestBaseContext.Provider value={restBase}>
       <div className='site' id='home'>
         <Header restBase={restBase} displayLoadingGIF={displayLoadingGIF}/>
         <main>
@@ -47,10 +52,11 @@ function App() {
             <Route path="/all-projects" element={<AllProjectsPage restBase={restBase} handleDisplayLoadingGIF={handleDisplayLoadingGIF} featuredImage={featuredImage} />}/>
             <Route path="/:slug" element={<PageIndividualProject restBase={restBase} handleDisplayLoadingGIF={handleDisplayLoadingGIF} featuredImage={featuredImage} />}/>
           </Routes>
-          <Sidebar restBase={restBase}/>
+          <Sidebar />
         </main>
-        {displayLoadingGIF === false && <Footer restBase={restBase} />}
+        {displayLoadingGIF === false && <Footer />}
       </div>
+    </RestBaseContext.Provider>
     </BrowserRouter>
 
   );

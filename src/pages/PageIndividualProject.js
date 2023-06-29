@@ -6,7 +6,7 @@ import hljs from "highlight.js";
 import SuggestedProjects from '../components/SuggestedProjects';
 import AOS from "aos";
 
-function PageIndividualProject({restBase, handleDisplayLoadingGIF, featuredImage}) {
+function PageIndividualProject({ restBase, handleDisplayLoadingGIF, featuredImage}) {
     const { slug } = useParams();
     const restPath = restBase + `posts?_embed&acf_format=standard&slug=${slug}&test=klnk`;
     const [restData, setData] = useState([]);

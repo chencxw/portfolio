@@ -1,12 +1,12 @@
 import SocialmediaBtns from './SocialmediaBtns';
 
-function Sidebar({restBase}) {
+function Sidebar() {
 
     return (
         <>
             <nav className='sidebar'>
                 <div className='sidebar-line'></div>
-                <SocialmediaBtns restBase={restBase}/>
+                <SocialmediaBtns />
             </nav>
         </>
     )
