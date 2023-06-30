@@ -161,11 +161,6 @@
         margin: 0rem auto 1rem;
         max-width: 900px;
 
-        summary,
-        summary::-webkit-details-marker {
-            list-style: none;
-        }
-
         summary {
             font-size: 1.4rem;
             font-weight: 700;
@@ -173,6 +168,11 @@
             position: relative;
             cursor: pointer;
             margin-bottom: 2rem;
+            list-style: none;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
         }
 
         h4 {
@@ -200,6 +200,15 @@
             div {
                 height: 500px;
                 overflow: auto;
+            }
+            div::-webkit-scrollbar {
+                -webkit-appearance: none;
+                width: 7px;
+            }
+            div::-webkit-scrollbar-thumb {
+                border-radius: 4px;
+                background-color: rgba(0, 0, 0, .5);
+                box-shadow: 0 0 1px rgba(255, 255, 255, .5);
             }
         }
     }
