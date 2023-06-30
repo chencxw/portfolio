@@ -7,6 +7,10 @@
         grid-column: 1/-1;
     }
 
+    h3 {
+        max-width: 80%;
+    }
+
     .featured-image {
         margin: 0;
         width: clamp(250px, 50vw, 550px); 
@@ -126,7 +130,6 @@
                 }
 
                 span {
-                    --deg: -45deg;
                     &::before {
                         transform: rotate(-65deg);
                         opacity: 1;
