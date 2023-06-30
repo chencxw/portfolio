@@ -41,9 +41,30 @@ a:hover {
 
 .wp-block-code {
     overflow: auto;
+
+    ::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 15px;
+        background-color: #FAFAFA;
+        border-right: 1px solid #e9e9e9;
+        border-left: 1px solid #e9e9e9;
+    }
+
+    ::-webkit-scrollbar-track {
+        margin: 2px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border: 3px solid rgba(0, 0, 0, 0);
+        background-clip: padding-box;
+        border-radius: 10px;
+        background-color: #C7C7C7;
+        box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+    }
 }
 
 pre code {
+    font-size: 1rem;
     max-height: 250px;
     &.hljs {
     background-color: #f6f6f6;
