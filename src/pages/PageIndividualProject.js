@@ -8,7 +8,7 @@ import AOS from "aos";
 
 function PageIndividualProject({ restBase, handleDisplayLoadingGIF, featuredImage}) {
     const { slug } = useParams();
-    const restPath = restBase + `posts?_embed&acf_format=standard&slug=${slug}&test=klnk`;
+    const restPath = restBase + `posts?_embed&acf_format=standard&slug=${slug}&test=jknj`;
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
 
