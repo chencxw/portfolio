@@ -196,6 +196,17 @@
             height: auto;
         }
 
+        .portfolio-planning-images {
+            padding-top: 5px;
+            img {
+                box-shadow: 2px 5px 10px #c2c2c2;
+            }
+        }
+
+        .css-animation-video {
+            box-shadow: 2px 3px 10px #c2c2c2;
+        }
+
         &:first-child {
             div {
                 height: 500px;
