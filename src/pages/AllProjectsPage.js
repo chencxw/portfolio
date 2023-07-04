@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 
 function AllProjectsPage({restBase, handleDisplayLoadingGIF, featuredImage}) {
     const restPathProj = restBase + 'posts?_embed&categories=3&order=asc';
-    const restPathPersonalProj = restBase + 'posts?_embed&categories=5&test=skjdnf';
+    const restPathPersonalProj = restBase + 'posts?_embed&categories=5';
     const [restDataProj, setDataProj] = useState([]);
     const [restDataPersonalProj, setDataPersonalProj] = useState([]);
     const [isLoadedProj, setProjLoadStatus] = useState(false);

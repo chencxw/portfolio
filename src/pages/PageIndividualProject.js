@@ -9,7 +9,7 @@ import { Helmet } from 'react-helmet-async';
 
 function PageIndividualProject({ restBase, handleDisplayLoadingGIF, featuredImage}) {
     const { slug } = useParams();
-    const restPath = restBase + `posts?_embed&acf_format=standard&slug=${slug}&test=jnf`;
+    const restPath = restBase + `posts?_embed&acf_format=standard&slug=${slug}`;
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
 
