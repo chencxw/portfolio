@@ -52,13 +52,6 @@ function PageIndividualProject({ restBase, handleDisplayLoadingGIF, featuredImag
         hljs.highlightAll();
     })
 
-    // Changing the document title
-    // useEffect(() => {
-    //     if( isLoaded === true ) {
-    //         document.title = `Crystal Chen | ${restData.title.rendered}`;
-    //     };
-    // });
-
     // Initialize AOS
     useEffect(() => {
         AOS.init();
