@@ -38,33 +38,32 @@
     }
 }
 
-@media(min-width: 45.625em) {
+@media (min-width: 45.625em) {
     .project-page-titles {
         position: absolute;
         bottom: 10%;
         left: -30%;
         z-index: 50;
     }
-
 }
 
-@media(min-width: 53.125em) {
+@media (min-width: 53.125em) {
     .project-landing-section {
-        h2{
+        h2 {
             font-size: 2.8rem;
         }
 
-        h3{
+        h3 {
             font-size: 2rem;
         }
     }
 }
 
-@media(min-width: 81.25em) {
+@media (min-width: 81.25em) {
     .project-landing-section {
         margin-bottom: 12rem;
 
-        h2{
+        h2 {
             font-size: 3.7rem;
         }
     }
@@ -107,7 +106,7 @@
     }
 }
 
-@media(min-width: 62.5em) {
+@media (min-width: 62.5em) {
     .proj-summary-section {
         display: grid;
         grid-template-columns: 1fr 2fr;
@@ -131,7 +130,6 @@
     .proj-details {
         grid-row: 1/2;
     }
-
 }
 
 /*--------------------  Gallery Section -------------------- */
@@ -196,14 +194,16 @@
             height: auto;
         }
 
-        .portfolio-planning-images {
+        .portfolio-planning-images,
+        .scheduler-planning-images {
             padding-top: 5px;
             img {
                 box-shadow: 2px 5px 10px #c2c2c2;
             }
         }
 
-        .css-animation-video {
+        .css-animation-video,
+        .scheduler-video {
             box-shadow: 2px 3px 10px #c2c2c2;
         }
 
@@ -215,7 +215,7 @@
             div::-webkit-scrollbar {
                 -webkit-appearance: none;
                 width: 15px;
-                background-color: #FAFAFA;
+                background-color: #fafafa;
                 border-right: 1px solid #e9e9e9;
                 border-left: 1px solid #e9e9e9;
             }
@@ -226,8 +226,8 @@
                 border: 3px solid rgba(0, 0, 0, 0);
                 background-clip: padding-box;
                 border-radius: 10px;
-                background-color: #C7C7C7;
-                box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+                background-color: #c7c7c7;
+                box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
             }
         }
     }
@@ -274,12 +274,12 @@
     }
 }
 
-@media(min-width: 50em) {
+@media (min-width: 50em) {
     .project-accordion {
         margin-bottom: 8rem;
         details {
             margin-bottom: 3rem;
-            
+
             summary {
                 font-size: 1.5rem;
             }
@@ -324,7 +324,7 @@
         max-width: 150px;
     }
 
-    h4{
+    h4 {
         font-size: 1rem;
     }
 
@@ -372,7 +372,7 @@
     height: 10px;
 }
 
-@media(min-width: 58.125em) {
+@media (min-width: 58.125em) {
     .swiper-wrapper {
         justify-content: center;
     }
