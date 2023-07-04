@@ -1,5 +1,6 @@
 import {useState, useEffect } from 'react';
 import ProjectGrid from '../components/ProjectGrid';
+import { Helmet } from 'react-helmet-async';
 
 function AllProjectsPage({restBase, handleDisplayLoadingGIF, featuredImage}) {
     const restPathProj = restBase + 'posts?_embed&categories=3&order=asc';
@@ -29,14 +30,13 @@ function AllProjectsPage({restBase, handleDisplayLoadingGIF, featuredImage}) {
             }
             fetchData()
     }, [restPathProj, restPathPersonalProj])
-    
-    // Changing the document title
-    useEffect(() => {
-        document.title = 'Crystal Chen | All Projects'
-    }, []);
 
     return (
         <>
+        <Helmet>
+            <title>Crystal Chen | All Projects</title>
+            <meta name="description" content="Websites and projects created by Crystal Chen. Explore WooCommerce stores, react-apps, and more."/>
+        </Helmet>
         {isLoadedProj && 
             <section className='all-projects'>
             <h2>All Projects.</h2>

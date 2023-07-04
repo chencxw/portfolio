@@ -5,6 +5,7 @@ import "highlight.js/styles/base16/edge-light.css";
 import hljs from "highlight.js";
 import SuggestedProjects from '../components/SuggestedProjects';
 import AOS from "aos";
+import { Helmet } from 'react-helmet-async';
 
 function PageIndividualProject({ restBase, handleDisplayLoadingGIF, featuredImage}) {
     const { slug } = useParams();
@@ -52,11 +53,11 @@ function PageIndividualProject({ restBase, handleDisplayLoadingGIF, featuredImag
     })
 
     // Changing the document title
-    useEffect(() => {
-        if( isLoaded === true ) {
-            document.title = `Crystal Chen | ${restData.title.rendered}`;
-        };
-    });
+    // useEffect(() => {
+    //     if( isLoaded === true ) {
+    //         document.title = `Crystal Chen | ${restData.title.rendered}`;
+    //     };
+    // });
 
     // Initialize AOS
     useEffect(() => {
@@ -67,6 +68,10 @@ function PageIndividualProject({ restBase, handleDisplayLoadingGIF, featuredImag
         <>
             {isLoaded &&
                 <>
+                <Helmet>
+                    <title>Crystal Chen | {restData.title.rendered}</title>
+                    <meta name="description" content="Learn more about projects, including the planning and development stage, or view the live site and GitHub repo."/>
+                </Helmet>
                 <section className='project-landing-section' data-aos='fade-up'  data-aos-delay='300' data-aos-duration='1000'>
                     <div className="project-landing-content">
                         { restData.featured_media !== 0 && restData._embedded['wp:featuredmedia'][0] &&

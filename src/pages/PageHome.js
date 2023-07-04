@@ -3,6 +3,7 @@ import Loading from '../components/Loading';
 import FeaturedProjects from '../components/FeaturedProjects';
 import About from '../components/About';
 import Contact from '../components/Contact';
+import { Helmet } from 'react-helmet-async';
 import "aos/dist/aos.css"
 
 function PageHome({restBase, handleDisplayLoadingGIF, featuredImage}) {
@@ -56,13 +57,12 @@ function PageHome({restBase, handleDisplayLoadingGIF, featuredImage}) {
         return () => mediaQuery2.removeEventListener('change', checkDesktop);
     })
 
-    // Changing the document title
-    useEffect(() => {
-        document.title = 'Crystal Chen'
-    }, []);
-
     return (
         <>
+            <Helmet>
+                <title>Crystal Chen's Portfolio | Junior Front-End Web Developer</title>
+                <meta name="description" content="Crystal Chen - Junior Front End Web Developer located in Vancouver. Explore Crystal's portfolio showcasing her passion for creating captivating web experiences."/>
+            </Helmet>
             {isLoaded ?
                 <>
                 <section className='landing-section'>
