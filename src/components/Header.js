@@ -71,7 +71,7 @@ function Header({restBase, displayLoadingGIF}) {
                         <span className="line"></span>
                         <span className="line"></span>
                     </span>
-                    <span className="sr-only">Menu</span>
+                    <span className="sr-only">Menu Button</span>
                 </button>
                 <nav className="site-navigation" >
                     <ul onClick={closeNavMenu}>

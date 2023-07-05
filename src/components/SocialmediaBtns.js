@@ -37,10 +37,11 @@ function SocialmediaBtns() {
     <>  
         {isLoaded && 
             <>
-            <div className='email-btn tooltip'>
+            <button className='email-btn tooltip' onClick={handleCopyText}>
                 <span className={showMessage ? "tooltipText show" : "tooltipText"}>Copied!</span>
-                <a onClick={handleCopyText} >{mailSVG}</a>
-            </div>
+                {mailSVG}
+                <span className='sr-only'>Copy Email</span>
+            </button>
             <a href={`${restData.acf.github_link}`}>{githubSVG}</a>
             <a href={`${restData.acf.linkedin_link}`}>{linkedinSVG}</a>
             </>

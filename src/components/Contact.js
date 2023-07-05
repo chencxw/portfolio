@@ -72,6 +72,7 @@ function Contact({restData, matchesDesktop}) {
                 >
                     <span className={showTooltip ? "tooltipText show" : "tooltipText"}>{matchesDesktop ? copyDisplayText : "Copied!"}</span>
                     {restData.acf.contact_email}
+                    <span className='sr-only'>Copy Email</span>
                 </button>
             </div>
             <div className="socialmedia-icons">

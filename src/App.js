@@ -1,6 +1,7 @@
 // Development Components
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useState, createContext } from 'react';
+import { HashLink } from 'react-router-hash-link';
 
 // Components
 import Header from './components/Header';
@@ -44,9 +45,10 @@ function App() {
   return (
     <BrowserRouter>
       <RestBaseContext.Provider value={restBase}>
+        <HashLink smooth to="/#site-main" className='screen-reader-text'>Skip to content</HashLink>
         <div className='site' id='home'>
           <Header restBase={restBase} displayLoadingGIF={displayLoadingGIF}/>
-          <main>
+          <main id="site-main">
             <Routes>
               <Route path="/" exact element={<PageHome restBase={restBase} handleDisplayLoadingGIF={handleDisplayLoadingGIF} featuredImage={featuredImage} />}/>
               <Route path="/all-projects" element={<AllProjectsPage restBase={restBase} handleDisplayLoadingGIF={handleDisplayLoadingGIF} featuredImage={featuredImage} />}/>
