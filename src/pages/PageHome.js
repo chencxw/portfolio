@@ -5,6 +5,7 @@ import About from '../components/About';
 import Contact from '../components/Contact';
 import { Helmet } from 'react-helmet-async';
 import "aos/dist/aos.css"
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
 
 function PageHome({restBase, handleDisplayLoadingGIF, featuredImage}) {
     const restPath = restBase + 'pages/6?acf_format=standard';
@@ -12,6 +13,7 @@ function PageHome({restBase, handleDisplayLoadingGIF, featuredImage}) {
     const [isLoaded, setLoadStatus] = useState(false);
     const [matches, setMatches] = useState(false);
     const [matchesDesktop, setMatchesDesktop] = useState(false);
+    const [imageLoaded, setImageLoaded] = useState(false);
     const query = "(min-width: 800px)";
     const query2 = "(min-width: 1024px)";
 

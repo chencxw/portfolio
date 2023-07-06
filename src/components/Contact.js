@@ -40,9 +40,10 @@ function Contact({restData, matchesDesktop}) {
         ScrollTrigger.create({
             animation: contactTL,
             trigger: buttonElement,
+            markers: true
         })
 
-        ScrollTrigger.refresh(true);
+        // ScrollTrigger.refresh(true);
 
         if(matchesDesktop === true) {
             contactTL.fromTo(underlineElement, {width: 0}, {width: 200, duration: 0.7, delay: 0.4});
@@ -56,6 +57,10 @@ function Contact({restData, matchesDesktop}) {
         contactTL.to(buttonElement, {rotate: 0});
         contactTL.to(buttonElement, {scale: 1});
     }, [matchesDesktop])
+
+    useEffect(() => {
+        ScrollTrigger.refresh(true);
+    })
 
     return (
         <section className="contact-section" id="contact">
