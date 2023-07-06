@@ -17,6 +17,13 @@
 .email-btn {
     display: inline;
     cursor: pointer;
+    padding: 0rem;
+
+    &:hover {
+        svg {
+            fill: $black;
+        }
+    }
     & .tooltipText {
         width: 70px;
         margin-left: -42px;
