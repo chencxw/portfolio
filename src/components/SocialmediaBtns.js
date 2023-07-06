@@ -4,7 +4,7 @@ import { RestBaseContext } from '../App';
 
 function SocialmediaBtns() {
     const restBase = useContext(RestBaseContext);
-    const restPath = restBase + 'pages/6?acf_format=standard&test=test';
+    const restPath = restBase + 'pages/6?acf_format=standard';
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
     const [showMessage, setShowMessage] = useState(false);
