@@ -7,8 +7,11 @@
 }
 
 .footer-nav {
-    a {
-        margin-right: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    .tooltipText {
+        margin-left: -35px;
     }
 }
 
