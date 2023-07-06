@@ -40,7 +40,6 @@ function Contact({restData, matchesDesktop}) {
         ScrollTrigger.create({
             animation: contactTL,
             trigger: buttonElement,
-            markers: true
         })
 
         setTimeout(() => {
