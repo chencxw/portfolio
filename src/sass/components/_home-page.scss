@@ -10,12 +10,12 @@
 .job-title {
     width: fit-content;
     margin-top: 15vh;
-
-    h2 {
+    p {
         color: $dark-gray;
         font-weight: 400;
         font-size: 1.6rem;
         margin-bottom: 2.5rem;
+        line-height: 30px;
     }
 
     &::after {
@@ -40,14 +40,16 @@
 }
 
 @media( min-width:62.5em ) {
-    .job-title h2 {
+    .job-title p {
         font-size: 1.9rem;
+        line-height: 35px;
     }
 }
 
 @media(min-width: 106.25em) {
-    .job-title h2 {
+    .job-title p {
         font-size: 2.1rem;
+        line-height: 43px;
     }
 }
 
@@ -133,6 +135,17 @@
 
 }
 
+@media(min-width: 75em) {
+    .featured-projects {
+        h3 {
+            font-size: 1.6rem;
+        }
+        h4 {
+            font-size: 1.4rem;
+        }
+    }
+}
+
 /*--------------------  About Section -------------------- */
 .about-section {
     min-height: 700px;
@@ -140,12 +153,18 @@
 
 .about-content {
     font-size: 1.2rem;
+    p {
+        line-height: 32px;
+    }
 }
 
 .toolkit-section {
     margin-top: 4rem;
     p {
         margin-top: 0.3rem;
+    }
+    h3 {
+        letter-spacing: 1.5px;
     }
 }
 

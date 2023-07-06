@@ -71,22 +71,22 @@ function PageIndividualProject({ restBase, handleDisplayLoadingGIF, featuredImag
                         <figure className="indvidual-proj-featured-image" dangerouslySetInnerHTML={featuredImage(restData._embedded['wp:featuredmedia'][0])}></figure>
                         }
                         <div className="project-page-titles">
-                            <h2>{restData.title.rendered}</h2>
-                            <h3>{restData.acf.project_subtitle}</h3>
+                            <h1>{restData.title.rendered}</h1>
+                            <h2>{restData.acf.project_subtitle}</h2>
                         </div>
                     </div>
                 </section>
                 <section className='proj-summary-section'>
                     <div className="overview-wrapper">
-                        <h4>Overview</h4>
+                        <h3>Overview</h3>
                         <div className='proj-overview' dangerouslySetInnerHTML={{__html:restData.acf.overview_content}}></div>
                     </div>
                     <div className='proj-details'>
-                        <h5>Toolkit</h5>
+                        <h4>Toolkit</h4>
                         <p>{restData.acf.toolkit_list}</p>
-                        <h5>Role</h5>
+                        <h4>Role</h4>
                         <p>{restData.acf.role_list}</p>
-                        <h5>View Project</h5>
+                        <h4>View Project</h4>
                         <div className='view-project-links'>
                             <a href={`${restData.acf.live_site_link}`}>{computerSVG} Live Site</a>
                             <a href={`${restData.acf.github_repo_link}`}>{githubSVG} GitHub Repository</a>

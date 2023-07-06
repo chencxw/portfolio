@@ -1,31 +1,39 @@
 @use '../base/variables' as *;
 
 @font-face {
-    font-family: Avenir;
-    src: url(../../fonts/Avenir-Roman-12.ttf) format('ttf');
-    font-weight: normal;
+    font-family: 'HK Grotesk';
+    src: url(../../fonts/hkgrotesk-light-webfont.woff2) format('woff2');
+    font-weight: 300;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: Avenir;
-    src: url(../../fonts/Avenir-Medium-09.ttf) format('ttf');
-    font-weight: medium;
+    font-family: 'HK Grotesk';
+    src: url(../../fonts/hkgrotesk-regular-webfont.woff2) format('woff2');
+    font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: Avenir;
-    src: url(../../fonts/Avenir-Heavy-05.ttf) format('ttf');
-    font-weight: bold;
+    font-family: 'HK Grotesk';
+    src: url(../../fonts/hkgrotesk-medium-webfont.woff2) format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'HK Grotesk';
+    src: url(../../fonts/hkgrotesk-bold-webfont.woff2) format('woff2');
+    font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
 
 body {
-    font-family: 'Avenir', sans-serif;
+    font-family: 'HK Grotesk', sans-serif;
     color: $dark-gray;
     font-weight: 400;
     font-size: 1.1rem;
@@ -36,7 +44,7 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: 'Avenir', sans-serif;
+    font-family: 'HK Grotesk', sans-serif;
 }
 
 h1,
@@ -58,6 +66,10 @@ h4 {
     margin: 0.3rem 0rem;
     font-weight: 500;
     font-size: 1.25rem;
+}
+
+h5 {
+    letter-spacing: 1px;
 }
 
 p {
