@@ -30,7 +30,7 @@ function Header({restBase, displayLoadingGIF}) {
         
         setTimeout(() => {
             el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        }, 200);
+        }, 300);
     }
 
     // Functions to open and close nav menu
