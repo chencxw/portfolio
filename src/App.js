@@ -43,7 +43,7 @@ function App() {
   }
 
   return (
-    <BrowserRouter basename="/">
+    <BrowserRouter>
       <RestBaseContext.Provider value={restBase}>
         <HashLink smooth to="/#site-main" className='screen-reader-text'>Skip to content</HashLink>
         <div className='site' id='home'>
