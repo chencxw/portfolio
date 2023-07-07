@@ -26,8 +26,6 @@ function Header({restBase, displayLoadingGIF}) {
     }, [restPath])
 
     function customScroll(el) {
-        // el.scrollIntoView({ behavior: 'auto', block: 'end' })
-        
         setTimeout(() => {
             el.scrollIntoView({ behavior: 'smooth', block: 'start' })
         }, 400);
@@ -63,7 +61,7 @@ function Header({restBase, displayLoadingGIF}) {
         <>
         {isLoaded && 
             <header className={ navOpen ? 'site-header show' : 'site-header'} ref={siteMenu}>
-                <Link className="logo" to="/" >
+                <Link className="logo" to="/" onClick={() => {window.scrollTo({top: 0, left:0, behavior: 'smooth'})}} >
                     {displayLoadingGIF ? <img src={logoGIF} alt="Loading Logo" /> : <img src={`${restData.acf.logo}`} alt="logo" />}
                 </Link>
                 <button className="menu-btn" onMouseDown={(e) => {e.preventDefault();}} onClick={showHideNav} >
