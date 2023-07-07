@@ -18,8 +18,9 @@
         overflow: hidden;
         display: flex;
         justify-content: center;
+        align-items: flex-start;
         img {
-            height: auto;
+            height: 100%;
             filter: grayscale(100%);
         }
     }
