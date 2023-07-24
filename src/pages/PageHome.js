@@ -62,7 +62,7 @@ function PageHome({restBase, handleDisplayLoadingGIF, featuredImage}) {
     return (
         <>
             <Helmet>
-                <title>Crystal Chen's Portfolio | Junior Front-End Web Developer</title>
+                <title>Crystal Chen's Portfolio | Front-End Web Developer</title>
                 <meta name="description" content="Crystal Chen - Junior Front End Web Developer located in Vancouver. Explore Crystal's portfolio showcasing her passion for creating captivating web experiences."/>
             </Helmet>
             {isLoaded ?
