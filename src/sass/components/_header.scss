@@ -3,9 +3,11 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    pointer-events: none;
 }
 
 .logo {
+    pointer-events: auto;
     img{
         width: 70px;
     }
@@ -24,6 +26,7 @@
     justify-content: center;
     align-items: center;
     box-shadow: 4px 4px 12px #bababa;
+    pointer-events: auto;
 }
 
 .plusIcon {
@@ -66,6 +69,7 @@
     font-weight: 400;
     z-index: 100;
     letter-spacing: 4px;
+    pointer-events: auto;
     ul {
         position: relative;
         top: 10rem;
