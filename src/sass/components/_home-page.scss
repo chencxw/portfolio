@@ -140,9 +140,6 @@
         h3 {
             font-size: 1.6rem;
         }
-        h4 {
-            font-size: 1.4rem;
-        }
     }
 }
 
@@ -162,9 +159,14 @@
     margin-top: 4rem;
     p {
         margin-top: 0.3rem;
+        font-size: 1rem;
     }
     h3 {
         letter-spacing: 1.5px;
+        font-size: 1.6rem;
+    }
+    h4 {
+        font-size: 1.35rem;
     }
 }
 
@@ -238,7 +240,7 @@
 }
 
 .contact-email {
-    font-size: clamp(1.3rem, 1.8vw + 1rem, 2.375rem);
+    font-size: 1.3rem;
     letter-spacing: 2px;
     color: $dark-gray;
     margin: 1rem 0rem;
@@ -284,24 +286,17 @@
     border-color: $black transparent transparent transparent;
 }
 
-@media(min-width: 64em) {
-    .contact-email:hover .tooltipText {
-        visibility: visible;
-        opacity: 1;
-    }
-}
-
-@media(min-width: 62.5em) {
-    .tooltipText {
-        bottom: 130%;
-    }
-}
-
 .socialmedia-icons {
     display: flex;
     justify-content: center;
     gap: 2rem;
     margin-top: 1rem;
+}
+
+@media(min-width: 25em) {
+    .contact-email {
+        font-size: 1.5rem;
+    }
 }
 
 @media(min-width: 50em) {
@@ -322,8 +317,25 @@
     }
 }
 
+@media(min-width: 62.5em) {
+    .tooltipText {
+        bottom: 130%;
+    }
+}
+
+@media(min-width: 64em) {
+    .contact-email:hover .tooltipText {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
 @media(min-width: 93.75em) {
     .contact-content.show {
         font-size: 1.5rem;
+    }
+
+    .contact-email {
+        font-size: 1.6rem;
     }
 }
